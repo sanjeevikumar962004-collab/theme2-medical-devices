@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Stackly</title>
+    <meta name="description"
+        content="Get in touch with Stackly — product enquiries, service support, or partnership opportunities. We're here to help.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* =====================================================
+           Contact Page Styles
+           ===================================================== */
+
+        /* Hero */
+        .contact-hero {
+            background: var(--color-text-dark);
+            padding: 9rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            bottom: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(232, 216, 207, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .contact-hero .eyebrow {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #E8D8CF;
+            margin-bottom: 1rem;
+        }
+
+        .contact-hero h1 {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            color: var(--color-white);
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+        }
+
+        .contact-hero h1 em {
+            font-style: italic;
+            color: #E8D8CF;
+        }
+
+        .contact-hero p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Quick contact strip */
+        .contact-strip {
+            background: var(--color-white);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .contact-strip-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: wrap;
+        }
+
+        .cstrip-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem 3rem;
+            border-right: 1px solid rgba(0, 0, 0, 0.06);
+            text-decoration: none;
+            color: var(--color-text-dark);
+            transition: background 0.2s;
+        }
+
+        .cstrip-item:last-child {
+            border-right: none;
+        }
+
+        .cstrip-item:hover {
+            background: #fcfbf9;
+        }
+
+        .cstrip-icon {
+            width: 48px;
+            height: 48px;
+            background: #E8D8CF;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--color-text-dark);
+            flex-shrink: 0;
+        }
+
+        .cstrip-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.5;
+            margin-bottom: 0.2rem;
+        }
+
+        .cstrip-value {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Main contact area */
+        .contact-main {
+            padding: 7rem 2rem;
+            background: var(--color-bg);
+        }
+
+        .contact-main-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        /* Left info */
+        .contact-info h2 {
+            font-family: var(--font-heading);
+            font-size: 2.6rem;
+            line-height: 1.2;
+            color: var(--color-text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info>p {
+            font-size: 1rem;
+            line-height: 1.8;
+            opacity: 0.65;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-eyebrow-sm {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a05b50;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Office cards */
+        .office-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .office-card {
+            background: var(--color-white);
+            border-radius: 16px;
+            padding: 1.5rem 1.75rem;
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+        }
+
+        .office-card-icon {
+            width: 40px;
+            height: 40px;
+            background: #E8D8CF;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-dark);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .office-card h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .office-card p {
+            font-size: 0.88rem;
+            opacity: 0.6;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Social links */
+        .contact-socials {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .contact-socials a {
+            width: 38px;
+            height: 38px;
+            background: var(--color-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-dark);
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .contact-socials a:hover {
+            background: var(--color-text-dark);
+            color: var(--color-white);
+        }
+
+        /* Form */
+        .contact-form-wrap {
+            background: var(--color-white);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-form-wrap h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            margin-bottom: 0.4rem;
+            color: var(--color-text-dark);
+        }
+
+        .contact-form-wrap>p {
+            font-size: 0.9rem;
+            opacity: 0.6;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-text-dark);
+            opacity: 0.8;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.85rem 1rem;
+            border: 1.5px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--color-text-dark);
+            background: var(--color-bg);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--color-text-dark);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        .form-submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--color-text-dark);
+            color: var(--color-white);
+            border: none;
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        .form-submit-btn:hover {
+            opacity: 0.88;
+            transform: translateY(-1px);
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            color: #4CAF50;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 7rem 2rem;
+            background: #fcfbf9;
+        }
+
+        .faq-inner {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .faq-header h2 {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            color: var(--color-text-dark);
+            margin-top: 0.5rem;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: var(--color-white);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1.5px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.4rem 1.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-text-dark);
+            text-align: left;
+        }
+
+        .faq-question i {
+            font-size: 0.85rem;
+            color: #a05b50;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.open .faq-question i {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            opacity: 0.7;
+            padding: 0 1.75rem;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+            padding: 0 1.75rem 1.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .contact-main-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-strip-inner {
+                flex-direction: column;
+            }
+
+            .cstrip-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            }
+
+            .cstrip-item:last-child {
+                border-bottom: none;
+            }
+
+            .contact-hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-wrap {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="box">
+            <div id="l1">S</div>
+            <div id="l2">T</div>
+            <div id="l3">A</div>
+            <div id="l4">C</div>
+            <div id="l5">K</div>
+            <div id="l6">L</div>
+            <div id="l7">Y</div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="menu-toggle" id="mobile-menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="logo">
+            <img src="./Untitled design (3).webp" alt="Stackly Logo" class="brand-img">
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <div class="mobile-menu-logo">
+                <img src="./Untitled design (3).webp" alt="Stackly Logo" class="brand-img">
+            </div>
+            <li class="has-dropdown">
+                <a href="index.html">Home <i class="fa-solid fa-chevron-down"
+                        style="font-size:0.75rem;margin-left:4px;opacity:0.7;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html">Home 1</a></li>
+                    <li><a href="index2.html">Home 2</a></li>
+                </ul>
+            </li>
+            <li><a href="store.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <div class="nav-action">
+            <a href="login.html" class="btn btn-primary">Login</a>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="contact-hero">
+            <div class="eyebrow">Get in Touch</div>
+            <h1>We'd love to <em>hear from you</em></h1>
+            <p>Whether you're enquiring about a product, need service support, or want to explore a partnership — our
+                team responds within one business day.</p>
+        </section>
+
+        <!-- Quick strip -->
+        <div class="contact-strip">
+            <div class="contact-strip-inner">
+
+                <a class="cstrip-item" href="mailto:support@stackly.com">
+                    <div class="cstrip-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <div class="cstrip-label">Email Us</div>
+                        <div class="cstrip-value">support@stackly.com</div>
+                    </div>
+                </a>
+                <a class="cstrip-item" href="#">
+                    <div class="cstrip-icon"><i class="fa-solid fa-headset"></i></div>
+                    <div>
+                        <div class="cstrip-label">Live Chat</div>
+                        <div class="cstrip-value">Mon – Fri, 8am – 8pm EST</div>
+                    </div>
+                </a>
+                <a class="cstrip-item" href="#">
+                    <div class="cstrip-icon"><i class="fa-solid fa-clock"></i></div>
+                    <div>
+                        <div class="cstrip-label">Emergency Support</div>
+                        <div class="cstrip-value">24 / 7 Helpline</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main contact -->
+        <section class="contact-main">
+            <div class="contact-main-inner">
+
+                <!-- Left: info -->
+                <div class="contact-info">
+                    <div class="section-eyebrow-sm">Our Offices</div>
+                    <h2>Find us around the world</h2>
+                    <p>With regional hubs across three continents, a Stackly specialist is never far from your
+                        facility.</p>
+
+                    <div class="office-cards">
+                        <div class="office-card">
+                            <div class="office-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4>Global Headquarters — Boston, USA</h4>
+                                <p>100 Innovation Way, Medical Research Park<br>Boston, MA 02115<br>+1 (800) 555-1234
+                                </p>
+                            </div>
+                        </div>
+                        <div class="office-card">
+                            <div class="office-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4>European Hub — Amsterdam, Netherlands</h4>
+                                <p>Medisch Centrum 4, Zuidoost<br>Amsterdam, NL 1101 BT<br>+31 20 555 9900</p>
+                            </div>
+                        </div>
+                        <div class="office-card">
+                            <div class="office-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4>Asia-Pacific Hub — Singapore</h4>
+                                <p>8 Biomedical Grove, #05-01<br>Neuros Building, Singapore 138665<br>+65 6555 8800</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-eyebrow-sm">Follow Us</div>
+                    <div class="contact-socials">
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Right: form -->
+                <div class="contact-form-wrap" id="contact-form-wrap">
+                    <h3>Send us a message</h3>
+                    <p>Fill in the form and a member of our team will get back to you within 24 hours.</p>
+                    <form id="contact-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cf-first">First Name *</label>
+                                <input type="text" id="cf-first" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cf-last">Last Name *</label>
+                                <input type="text" id="cf-last" placeholder="Doe" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cf-email">Email Address *</label>
+                                <input type="email" id="cf-email" placeholder="john@hospital.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cf-phone">Phone Number</label>
+                                <input type="tel" id="cf-phone" placeholder="+1 (800) 000-0000">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cf-org">Organisation</label>
+                                <input type="text" id="cf-org" placeholder="City General Hospital">
+                            </div>
+                            <div class="form-group">
+                                <label for="cf-topic">Topic *</label>
+                                <select id="cf-topic" required>
+                                    <option value="" disabled selected>Select a topic…</option>
+                                    <option>Product Enquiry</option>
+                                    <option>Service &amp; Maintenance</option>
+                                    <option>Technical Support</option>
+                                    <option>Partnership / Reseller</option>
+                                    <option>Training Programme</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group full">
+                                <label for="cf-message">Message *</label>
+                                <textarea id="cf-message" placeholder="Tell us how we can help…" required></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="form-submit-btn">Send Message &nbsp;<i
+                                class="fa-solid fa-paper-plane" style="font-size:0.85rem;"></i></button>
+                    </form>
+                    <div class="form-success" id="form-success">
+                        <i class="fa-solid fa-circle-check"
+                            style="font-size:2rem;display:block;margin-bottom:0.75rem;"></i>
+                        Message sent! We'll be in touch within one business day.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <div class="faq-inner">
+                <div class="faq-header">
+                    <div class="section-eyebrow-sm">FAQs</div>
+                    <h2>Common questions</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What is your typical response time for enquiries?
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">All general enquiries are responded to within one business day. For
+                            urgent service or technical support issues, please call our 24/7 helpline rather than
+                            submitting the form.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Do you offer product demonstrations?
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">Yes. We offer both on-site demos at your facility and virtual live demos
+                            via video conference. Select "Product Enquiry" in the form above and mention you'd like a
+                            demo in your message.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How do I log an emergency equipment fault?
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">For equipment faults that affect patient care, please call our emergency
+                            service line: +1 (800) 555-9911 (available 24/7). Do not use the contact form for critical
+                            faults as response times are not guaranteed.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Can I request a service contract quotation?
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">Absolutely. Select "Service &amp; Maintenance" from the topic dropdown
+                            and provide details about your device inventory and facility size. Our service team will
+                            prepare a tailored quotation within 48 hours.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            I'm interested in becoming a Stackly reseller. Who do I contact?
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">Select "Partnership / Reseller" from the topic dropdown in the form
+                            above. Our partner development team will review your application and reach out to discuss
+                            territory coverage and terms.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="alt-premium-footer">
+        <div class="apf-container">
+            <div class="apf-grid">
+                <div class="apf-brand-section">
+                    <img src="./Untitled design (3).webp" alt="Stackly Logo" class="apf-logo">
+                    <h2 class="apf-slogan">Engineered for LIFE.</h2>
+                    <div class="apf-contact-box">
+                        <p class="apf-address">100 Innovation Way<br>Medical Research Park<br>Boston, MA 02115</p>
+                        <a href="tel:+18005551234" class="apf-phone">+1 (800) 555-1234</a>
+                        <a href="mailto:support@stackly.com" class="apf-email">support@stackly.com</a>
+                    </div>
+                </div>
+                <div class="apf-nav-section">
+                    <div class="apf-col">
+                        <h4 class="apf-title">Specialties</h4>
+                        <ul class="apf-list">
+                            <li><a href="#">Diagnostic Imaging</a></li>
+                            <li><a href="#">Patient Monitoring</a></li>
+                            <li><a href="#">Surgical Integration</a></li>
+                            <li><a href="#">Laboratory Systems</a></li>
+                            <li><a href="#">Critical Care</a></li>
+                        </ul>
+                    </div>
+                    <div class="apf-col">
+                        <h4 class="apf-title">Company</h4>
+                        <ul class="apf-list">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="store.html">Products</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="apf-cta-section">
+                    <h4 class="apf-title">Stay Informed</h4>
+                    <p class="apf-newsletter-text">Subscribe for the latest in medical technology and clinical insights.
+                    </p>
+                    <form class="apf-newsletter-form" onsubmit="event.preventDefault();window.location.href='404.html'">
+                        <input type="email" placeholder="Enter your email address" class="apf-input" required>
+                        <button type="submit" class="apf-submit-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                    </form>
+                    <div class="apf-social-icons">
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="X"><i class="fa-brands fa-x"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="apf-bottom-bar">
+                <div class="apf-copyright">&copy; 2026 Stackly Corporation.</div>
+                <div class="apf-legal-links">
+                    <a href="#">Regulatory</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Preloader
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                setTimeout(() => {
+                    preloader.classList.add('fade-out');
+                    setTimeout(() => { preloader.style.display = 'none'; }, 300);
+                }, 400);
+            }
+
+            // Mobile menu
+            const menuToggle = document.getElementById('mobile-menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+            }
+
+            // Contact form submit
+            const form = document.getElementById('contact-form');
+            const successMsg = document.getElementById('form-success');
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    // Basic validation
+                    const required = form.querySelectorAll('[required]');
+                    let valid = true;
+                    required.forEach(el => {
+                        el.style.borderColor = '';
+                        if (!el.value.trim()) {
+                            el.style.borderColor = '#e05c5c';
+                            valid = false;
+                        }
+                    });
+                    if (!valid) return;
+
+                    // Redirect to 404 (no backend)
+                    window.location.href = '404.html';
+                });
+                // Clear red border on input
+                form.querySelectorAll('input, select, textarea').forEach(el => {
+                    el.addEventListener('input', () => el.style.borderColor = '');
+                });
+            }
+
+            // FAQ accordion
+            document.querySelectorAll('.faq-question').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = btn.parentElement;
+                    const isOpen = item.classList.contains('open');
+                    // Close all
+                    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                    // Toggle clicked
+                    if (!isOpen) item.classList.add('open');
+                });
+            });
+
+            // GSAP
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Strip items
+                gsap.fromTo('.cstrip-item',
+                    { y: 20, opacity: 0 },
+                    {
+                        y: 0, opacity: 1, duration: 0.5, stagger: 0.1,
+                        scrollTrigger: { trigger: '.contact-strip', start: 'top 85%' }
+                    }
+                );
+
+                // Office cards
+                gsap.utils.toArray('.office-card').forEach((card, i) => {
+                    gsap.fromTo(card,
+                        { x: -20, opacity: 0 },
+                        {
+                            x: 0, opacity: 1, duration: 0.5, delay: i * 0.1,
+                            scrollTrigger: { trigger: card, start: 'top 87%' }
+                        }
+                    );
+                });
+
+                // Form wrap
+                gsap.fromTo('.contact-form-wrap',
+                    { y: 40, opacity: 0 },
+                    {
+                        y: 0, opacity: 1, duration: 0.7,
+                        scrollTrigger: { trigger: '.contact-form-wrap', start: 'top 82%' }
+                    }
+                );
+
+                // FAQ items
+                gsap.utils.toArray('.faq-item').forEach((item, i) => {
+                    gsap.fromTo(item,
+                        { y: 20, opacity: 0 },
+                        {
+                            y: 0, opacity: 1, duration: 0.5, delay: i * 0.07,
+                            scrollTrigger: { trigger: item, start: 'top 88%' }
+                        }
+                    );
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

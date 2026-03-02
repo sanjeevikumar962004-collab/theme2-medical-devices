@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page Not Found | Stackly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #3F322D;
+            font-family: 'Inter', sans-serif;
+            padding: 2rem;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Background orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .orb1 {
+            width: 500px;
+            height: 500px;
+            top: -200px;
+            left: -200px;
+            background: radial-gradient(circle, rgba(232, 216, 207, 0.08) 0%, transparent 70%);
+        }
+
+        .orb2 {
+            width: 400px;
+            height: 400px;
+            bottom: -150px;
+            right: -150px;
+            background: radial-gradient(circle, rgba(232, 216, 207, 0.06) 0%, transparent 70%);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(232, 216, 207, 0.12);
+            border: 1px solid rgba(232, 216, 207, 0.2);
+            color: #E8D8CF;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+        }
+
+        .error-num {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(7rem, 18vw, 14rem);
+            font-weight: 700;
+            color: transparent;
+            -webkit-text-stroke: 2px rgba(232, 216, 207, 0.2);
+            line-height: 1;
+            margin-bottom: 0;
+            user-select: none;
+            animation: float404 4s ease-in-out infinite;
+        }
+
+        @keyframes float404 {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            color: #fff;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h1 em {
+            font-style: italic;
+            color: #E8D8CF;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.5);
+            max-width: 480px;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+
+        .cta-row {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3.5rem;
+        }
+
+        .btn-home {
+            background: #E8D8CF;
+            color: #3F322D;
+            padding: 0.95rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .btn-home:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
+
+        .btn-back {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.75);
+            padding: 0.95rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .btn-back:hover {
+            border-color: #E8D8CF;
+            color: #E8D8CF;
+        }
+
+        /* Quick nav links */
+        .quick-links {
+            display: flex;
+            gap: 0.5rem 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .quick-links a {
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .quick-links a:hover {
+            color: #E8D8CF;
+        }
+
+        /* Logo top-left */
+        .top-bar {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+        }
+
+        .top-bar img {
+            height: 32px;
+        }
+
+        .top-bar span {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: #E8D8CF;
+            font-weight: 600;
+        }
+
+        /* Countdown */
+        .auto-redirect {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.3);
+            margin-top: 2rem;
+        }
+
+        .auto-redirect span {
+            color: #E8D8CF;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+
+    <a href="index.html" class="top-bar">
+        <img src="./Untitled design (3).webp" alt="Stackly">
+        <span>Stackly</span>
+    </a>
+
+    <div class="badge"><i class="fa-solid fa-triangle-exclamation"></i> Error 404</div>
+
+    <div class="error-num">404</div>
+
+    <h1>This page is <em>out of service</em></h1>
+    <p class="subtitle">The page you're looking for doesn't exist, has been moved, or is still under construction. Let
+        us get you back on track.</p>
+
+    <div class="cta-row">
+        <a href="index.html" class="btn-home"><i class="fa-solid fa-house"
+                style="font-size:0.85rem;margin-right:6px;"></i> Go to Homepage</a>
+        <a href="javascript:history.back()" class="btn-back"><i class="fa-solid fa-arrow-left"
+                style="font-size:0.85rem;margin-right:6px;"></i> Go Back</a>
+    </div>
+
+    <div class="quick-links">
+        <a href="store.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <p class="auto-redirect" id="redirect-msg">Redirecting to homepage in <span id="countdown">10</span>s</p>
+
+    <script>
+        let t = 10;
+        const countEl = document.getElementById('countdown');
+        const interval = setInterval(() => {
+            t--;
+            countEl.textContent = t;
+            if (t <= 0) { clearInterval(interval); window.location.href = 'index.html'; }
+        }, 1000);
+    </script>
+</body>
+
+</html>

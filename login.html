@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Stackly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            font-family: var(--font-body, 'Inter', sans-serif);
+            background: #F7F3F0;
+        }
+
+        .auth-left {
+            width: 45%;
+            background: #3F322D;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .auth-left::before {
+            content: '';
+            position: absolute;
+            bottom: -200px;
+            right: -200px;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(232, 216, 207, 0.12) 0%, transparent 65%);
+        }
+
+        .auth-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .auth-logo img {
+            height: 36px;
+        }
+
+        .auth-logo span {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #E8D8CF;
+            font-weight: 600;
+        }
+
+        .auth-left-body {
+            position: relative;
+            z-index: 1;
+        }
+
+        .auth-left-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+        }
+
+        .auth-left-body h2 em {
+            font-style: italic;
+            color: #E8D8CF;
+        }
+
+        .auth-left-body p {
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .auth-left-stats {
+            display: flex;
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .auth-stat strong {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #E8D8CF;
+        }
+
+        .auth-stat span {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        .auth-right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2rem;
+        }
+
+        .auth-box {
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .auth-box h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #3F322D;
+            margin-bottom: 0.4rem;
+        }
+
+        .auth-box>p {
+            font-size: 0.92rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+        }
+
+        .form-field label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #3F322D;
+        }
+
+        .field-wrap {
+            position: relative;
+        }
+
+        .field-wrap input {
+            width: 100%;
+            padding: 0.85rem 3rem 0.85rem 1rem;
+            border: 1.5px solid rgba(0, 0, 0, 0.12);
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: #3F322D;
+            background: #fff;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .field-wrap input:focus {
+            border-color: #3F322D;
+        }
+
+        .field-wrap input.error {
+            border-color: #e05c5c;
+        }
+
+        .field-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .field-error {
+            font-size: 0.78rem;
+            color: #e05c5c;
+            display: none;
+        }
+
+        .field-error.show {
+            display: block;
+        }
+
+        .row-between {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #555;
+            cursor: pointer;
+        }
+
+        .remember input[type="checkbox"] {
+            accent-color: #3F322D;
+            width: 15px;
+            height: 15px;
+        }
+
+        .forgot-link {
+            font-size: 0.85rem;
+            color: #a05b50;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 0.95rem;
+            background: #3F322D;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.2s;
+            margin-top: 0.25rem;
+        }
+
+        .auth-btn:hover {
+            opacity: 0.88;
+            transform: translateY(-1px);
+        }
+
+        .auth-divider {
+            text-align: center;
+            font-size: 0.82rem;
+            color: #aaa;
+            margin: 0.5rem 0;
+        }
+
+        .social-btns {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1.5px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            background: #fff;
+            font-family: inherit;
+            font-size: 0.88rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: border-color 0.2s;
+        }
+
+        .social-btn:hover {
+            border-color: #3F322D;
+        }
+
+        .auth-footer-text {
+            text-align: center;
+            font-size: 0.88rem;
+            color: #666;
+            margin-top: 1.25rem;
+        }
+
+        .auth-footer-text a {
+            color: #a05b50;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .auth-footer-text a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .auth-left {
+                width: 100%;
+                padding: 2rem;
+            }
+
+            .auth-left-body h2 {
+                font-size: 2rem;
+            }
+
+            .auth-left-stats {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Left Panel -->
+    <div class="auth-left">
+        <div class="auth-logo">
+            <img src="./Untitled design (3).webp" alt="Stackly">
+            <span>Stackly</span>
+        </div>
+        <div class="auth-left-body">
+            <h2>Welcome back to <em>precision care</em></h2>
+            <p>Access your Stackly portal to manage orders, service requests, device fleet analytics, and more.</p>
+        </div>
+        <div class="auth-left-stats">
+            <div class="auth-stat"><strong>10k+</strong><span>Hospitals Served</span></div>
+            <div class="auth-stat"><strong>68</strong><span>Countries</span></div>
+            <div class="auth-stat"><strong>99.7%</strong><span>Uptime Rate</span></div>
+        </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="auth-right">
+        <div class="auth-box">
+            <h1>Sign in</h1>
+            <p>Enter your credentials to access your account</p>
+
+            <form class="auth-form" id="login-form" novalidate>
+                <div class="form-field">
+                    <label for="login-email">Email Address</label>
+                    <div class="field-wrap">
+                        <input type="email" id="login-email" placeholder="you@hospital.com" autocomplete="email">
+                        <i class="fa-solid fa-envelope field-icon"></i>
+                    </div>
+                    <span class="field-error" id="err-email">Please enter a valid email address.</span>
+                </div>
+
+                <div class="form-field">
+                    <label for="login-pass">Password</label>
+                    <div class="field-wrap">
+                        <input type="password" id="login-pass" placeholder="••••••••" autocomplete="current-password">
+                        <i class="fa-solid fa-eye field-icon" id="toggle-pass" style="cursor:pointer;"></i>
+                    </div>
+                    <span class="field-error" id="err-pass">Password must be at least 8 characters.</span>
+                </div>
+
+                <div class="row-between">
+                    <label class="remember">
+                        <input type="checkbox" id="remember-me"> Remember me
+                    </label>
+                    <a href="forgot.html" class="forgot-link">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="auth-btn">Sign In &nbsp;<i class="fa-solid fa-arrow-right"
+                        style="font-size:0.85rem;"></i></button>
+
+                <div class="auth-divider">or continue with</div>
+
+                <div class="social-btns">
+                    <button type="button" class="social-btn" onclick="window.location='404.html'">
+                        <img src="https://www.google.com/favicon.ico" width="16" height="16" alt="Google"> Google
+                    </button>
+                    <button type="button" class="social-btn" onclick="window.location='404.html'">
+                        <i class="fa-brands fa-microsoft" style="color:#00a4ef;"></i> Microsoft
+                    </button>
+                </div>
+            </form>
+
+            <p class="auth-footer-text">Don't have an account? <a href="signup.html">Create one</a></p>
+            <p class="auth-footer-text" style="margin-top:0.5rem;"><a href="index.html"
+                    style="color:#aaa;font-weight:400;font-size:0.8rem;"><i class="fa-solid fa-arrow-left"
+                        style="font-size:0.7rem;"></i> Back to website</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Show/hide password
+        const passInput = document.getElementById('login-pass');
+        const togglePass = document.getElementById('toggle-pass');
+        togglePass.addEventListener('click', () => {
+            const isHidden = passInput.type === 'password';
+            passInput.type = isHidden ? 'text' : 'password';
+            togglePass.className = isHidden ? 'fa-solid fa-eye-slash field-icon' : 'fa-solid fa-eye field-icon';
+        });
+
+        // Form validation
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            let valid = true;
+
+            const email = document.getElementById('login-email');
+            const pass = document.getElementById('login-pass');
+            const errEmail = document.getElementById('err-email');
+            const errPass = document.getElementById('err-pass');
+
+            // Reset
+            [email, pass].forEach(el => { el.classList.remove('error'); });
+            [errEmail, errPass].forEach(el => el.classList.remove('show'));
+
+            if (!email.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                email.classList.add('error'); errEmail.classList.add('show'); valid = false;
+            }
+            if (!pass.value || pass.value.length < 8) {
+                pass.classList.add('error'); errPass.classList.add('show'); valid = false;
+            }
+            if (valid) {
+                // Simulate login — redirect to 404 (since no backend)
+                window.location.href = '404.html';
+            }
+        });
+
+        // Clear errors on type
+        ['login-email', 'login-pass'].forEach(id => {
+            document.getElementById(id).addEventListener('input', function () {
+                this.classList.remove('error');
+            });
+        });
+    </script>
+</body>
+
+</html>

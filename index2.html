@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly | Precision Medical Devices</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="box">
+            <div id="l1">S</div>
+            <div id="l2">T</div>
+            <div id="l3">A</div>
+            <div id="l4">C</div>
+            <div id="l5">K</div>
+            <div id="l6">L</div>
+            <div id="l7">Y</div>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="menu-toggle" id="mobile-menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div class="logo">
+            <img src="./Untitled design (3).webp" alt="Stackly Logo" class="brand-img">
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+            <div class="mobile-menu-logo">
+                <img src="./Untitled design (3).webp" alt="Stackly Logo" class="brand-img">
+            </div>
+            <li class="has-dropdown">
+                <a href="index.html" class="active">Home <i class="fa-solid fa-chevron-down"
+                        style="font-size: 0.75rem; margin-left: 4px; opacity: 0.7;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html">Home 1</a></li>
+                    <li><a href="index2.html">Home 2</a></li>
+                </ul>
+            </li>
+            <li><a href="store.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-action">
+            <a href="login.html" class="btn btn-primary">Login</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Split Hero Section -->
+        <section class="split-hero">
+            <div class="split-hero-content">
+                <h1 class="hero-title"
+                    style="text-align: left; font-size: 4.5rem; line-height: 1.1; margin-bottom: 1.5rem;">
+                    Precision<br>meets<br>compassion</h1>
+                <p class="hero-subtitle" style="text-align: left; margin: 0 0 2rem 0; font-size: 1.25rem;">Advanced
+                    medical devices and next-generation diagnostic tools designed to improve patient outcomes from day
+                    one.</p>
+                <div class="hero-actions">
+                    <a href="store.html" class="btn btn-primary">Discover Products</a>
+                    <a href="#" class="btn">View
+                        Solutions</a>
+                </div>
+
+                <div class="cert-badge">
+                    <i class="fa-solid fa-medal" style="font-size: 1.5rem; color: #a05b50;"></i>
+                    <span style="font-weight: 500;">ISO 13485 Certified Medical Supplier</span>
+                </div>
+            </div>
+
+            <div class="split-hero-image">
+                <!-- Placeholder for high quality medical device render -->
+                <img src="images/photo-1519494026892-80bbd2d6fd0d_61e24f.webp" alt="Hospital Technology"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px;">
+
+                <!-- Floating Trust Badge -->
+                <div class="floating-card trust-badge-card">
+                    <div class="stars" style="color: #FFB800; display: flex; gap: 4px; font-size: 0.9rem;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <div>
+                        <strong style="display: block; font-size: 0.9rem;">Global Trust</strong>
+                        <span style="font-size: 0.8rem; opacity: 0.7;">10k+ Hospitals</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Infinite Scrolling Text Marquee -->
+        <section class="text-marquee-section"
+            style="padding: 2rem 0; border-bottom: 1px solid var(--color-border); border-top: 1px solid var(--color-border); margin-bottom: 4rem;">
+            <div class="marquee-container">
+                <div class="marquee-content" id="marquee-content" style="color: var(--color-text-dark);">
+                    <span class="marquee-item">PRECISION <span class="marquee-separator">✺</span></span>
+                    <span class="marquee-item">RELIABILITY <span class="marquee-separator">✺</span></span>
+                    <span class="marquee-item">INNOVATION <span class="marquee-separator">✺</span></span>
+                    <span class="marquee-item">EXCELLENCE <span class="marquee-separator">✺</span></span>
+                    <span class="marquee-item">COMPATIBILITY <span class="marquee-separator">✺</span></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medical Equipment Services Section -->
+        <section class="mh-services-section">
+            <div class="mh-services-header">
+                <div class="mh-top-badge animate-entry">
+                    <span class="mh-blue-dot"></span> Equipment Services
+                </div>
+                <h2 class="mh-main-headline animate-entry">
+                    Advanced Medical<br>
+                    Solutions to <span class="mh-accent-italic">Equip Your Facility</span>
+                </h2>
+            </div>
+
+            <div class="mh-services-list">
+                <!-- Row 1: Surgical Instruments -->
+                <div class="mh-service-row" data-service="surgical">
+                    <div class="mh-row-indicator"></div>
+                    <div class="mh-col-title">
+                        <h3>Surgical Instruments</h3>
+                    </div>
+                    <div class="mh-col-img">
+                        <img src="images/photo-1583324113626-70df0f4deaab_1f39e9.webp" alt="Surgical Instruments">
+                    </div>
+                    <div class="mh-col-desc">
+                        <p>High-precision tools and systems designed to support successful surgical outcomes.</p>
+                    </div>
+                    <div class="mh-col-action">
+                        <div class="mh-action-btn">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2: Patient Monitoring -->
+                <div class="mh-service-row" data-service="monitoring">
+                    <div class="mh-row-indicator"></div>
+                    <div class="mh-col-title">
+                        <h3>Patient Monitoring</h3>
+                    </div>
+                    <div class="mh-col-img">
+                        <img src="images/photo-1516549655169-df83a0774514_7b688c.webp" alt="Patient Monitoring">
+                    </div>
+                    <div class="mh-col-desc">
+                        <p>Continuous physiological monitoring systems for comprehensive patient oversight.</p>
+                    </div>
+                    <div class="mh-col-action">
+                        <div class="mh-action-btn">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3: Diagnostic Imaging -->
+                <div class="mh-service-row" data-service="imaging">
+                    <div class="mh-row-indicator"></div>
+                    <div class="mh-col-title">
+                        <h3>Diagnostic Imaging</h3>
+                    </div>
+                    <div class="mh-col-img">
+                        <img src="images/photo-1530497610245-94d3c16cda28_e94890.webp"
+                            alt="Diagnostic Imaging Equipment">
+                    </div>
+                    <div class="mh-col-desc">
+                        <p>State-of-the-art imaging systems for precise and reliable patient diagnostics.</p>
+                    </div>
+                    <div class="mh-col-action">
+                        <div class="mh-action-btn">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 4: Critical Care Equipment -->
+                <div class="mh-service-row" data-service="critical-care">
+                    <div class="mh-row-indicator"></div>
+                    <div class="mh-col-title">
+                        <h3>Critical Care Equipment</h3>
+                    </div>
+                    <div class="mh-col-img">
+                        <img src="images/photo-1516549655169-df83a0774514_7b688c.webp" alt="Critical Care Monitors">
+                    </div>
+                    <div class="mh-col-desc">
+                        <p>Advanced life support and monitoring devices designed for intensive care units.</p>
+                    </div>
+                    <div class="mh-col-action">
+                        <div class="mh-action-btn">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===== Stats Band ===== -->
+        <section style="background:#3F322D;padding:4rem 2rem;">
+            <div
+                style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center;">
+                <div class="idx2-stat">
+                    <div class="idx2-stat-num" data-target="24" data-suffix="+">0+</div>
+                    <div style="font-size:0.9rem;opacity:0.55;color:#E8D8CF;margin-top:0.4rem;">Years of Innovation
+                    </div>
+                </div>
+                <div class="idx2-stat">
+                    <div class="idx2-stat-num" data-target="10" data-suffix="k+">0k+</div>
+                    <div style="font-size:0.9rem;opacity:0.55;color:#E8D8CF;margin-top:0.4rem;">Hospitals Served</div>
+                </div>
+                <div class="idx2-stat">
+                    <div class="idx2-stat-num" data-target="68" data-suffix="">0</div>
+                    <div style="font-size:0.9rem;opacity:0.55;color:#E8D8CF;margin-top:0.4rem;">Countries Worldwide
+                    </div>
+                </div>
+                <div class="idx2-stat">
+                    <div class="idx2-stat-num" data-target="99.7" data-suffix="%" data-decimals="1">0%</div>
+                    <div style="font-size:0.9rem;opacity:0.55;color:#E8D8CF;margin-top:0.4rem;">Device Uptime Rate</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Trusted By ===== -->
+        <section style="padding:3.5rem 2rem;background:var(--color-bg);border-bottom:1px solid rgba(0,0,0,0.06);">
+            <p
+                style="text-align:center;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;opacity:0.4;margin-bottom:2rem;">
+                Trusted by leading healthcare institutions</p>
+            <div style="overflow:hidden;position:relative;">
+                <div id="idx2-logos"
+                    style="display:flex;gap:3.5rem;align-items:center;width:max-content;animation:idx2LogoScroll 22s linear infinite;">
+                    <span
+                        style="font-family:var(--font-heading);font-size:1.3rem;font-weight:700;opacity:0.3;white-space:nowrap;">Mayo
+                        Clinic</span>
+                    <span
+                        style="font-family:var(--font-heading);font-size:1.3rem;font-weight:700;opacity:0.3;white-space:nowrap;">Johns
+                        Hopkins</span>
+                    <span
+                        style="font-family:var(--font-heading);font-size:1.3rem;font-weight:700;opacity:0.3;white-space:nowrap;">Cleveland
+                        Clinic</span>
+                    <span
+                        style="font-family:var(--font-heading);font-size:1.3rem;font-weight:700;opacity:0.3;white-space:nowrap;">Mass
+                        General</span>
+                    <span
+                        style="font-family:var(--font-heading);font-size:1.3rem;font-weight:700;opacity:0.3;white-space:nowrap;">Stanford
+                        Health</span>
+                    <span
+                        style="font-family:var(--font-heading);font-size:1.3rem;font-weight:700;opacity:0.3;white-space:nowrap;">NYU
+                        Langone</span>
+                    <span
+                        style="font-family:var(--font-heading);font-size:1.3rem;font-weight:700;opacity:0.3;white-space:nowrap;">Cedars-Sinai</span>
+                    <!-- Duplicate for seamless loop -->
+                    <span
+                        style="font-family:var(--font-heading);font-size:1.3rem;font-weight:700;opacity:0.3;white-space:nowrap;">Mayo
+                        Clinic</span>
+                    <span
+                        style="font-family:var(--font-heading);font-size:1.3rem;font-weight:700;opacity:0.3;white-space:nowrap;">Johns
+                        Hopkins</span>
+                    <span
+                        style="font-family:var(--font-heading);font-size:1.3rem;font-weight:700;opacity:0.3;white-space:nowrap;">Cleveland
+                        Clinic</span>
+                    <span
+                        style="font-family:var(--font-heading);font-size:1.3rem;font-weight:700;opacity:0.3;white-space:nowrap;">Mass
+                        General</span>
+                    <span
+                        style="font-family:var(--font-heading);font-size:1.3rem;font-weight:700;opacity:0.3;white-space:nowrap;">Stanford
+                        Health</span>
+                    <span
+                        style="font-family:var(--font-heading);font-size:1.3rem;font-weight:700;opacity:0.3;white-space:nowrap;">NYU
+                        Langone</span>
+                    <span
+                        style="font-family:var(--font-heading);font-size:1.3rem;font-weight:700;opacity:0.3;white-space:nowrap;">Cedars-Sinai</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Featured Products ===== -->
+        <section style="padding:7rem 2rem;background:#fcfbf9;">
+            <div style="max-width:1200px;margin:0 auto;">
+                <div
+                    style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem;">
+                    <div>
+                        <p
+                            style="font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#a05b50;margin-bottom:0.5rem;">
+                            Featured Products</p>
+                        <h2
+                            style="font-family:var(--font-heading);font-size:2.8rem;color:var(--color-text-dark);line-height:1.15;">
+                            Our most trusted<br>devices</h2>
+                    </div>
+                    <a href="store.html"
+                        style="display:flex;align-items:center;gap:0.5rem;font-weight:600;color:var(--color-text-dark);text-decoration:none;font-size:0.95rem;border-bottom:1.5px solid var(--color-text-dark);padding-bottom:2px;">Browse
+                        All Products <i class="fa-solid fa-arrow-right" style="font-size:0.8rem;"></i></a>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;" class="idx2-prod-grid">
+
+                    <div class="idx2-prod-card">
+                        <div style="height:220px;overflow:hidden;border-radius:16px 16px 0 0;">
+                            <img src="images/photo-1559757148-5c350d0d3c56_2d5fbb.webp" alt="MRI Scanner"
+                                style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
+                        </div>
+                        <div style="padding:1.5rem;">
+                            <span
+                                style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;background:#E8D8CF;padding:0.25rem 0.7rem;border-radius:20px;color:var(--color-text-dark);">Imaging</span>
+                            <h3
+                                style="font-family:var(--font-heading);font-size:1.3rem;margin:0.75rem 0 0.4rem;color:var(--color-text-dark);">
+                                NeuroScan 3T MRI</h3>
+                            <p style="font-size:0.9rem;opacity:0.65;line-height:1.6;margin-bottom:1.25rem;">Ultra-high
+                                field 3 Tesla MRI delivering sub-millimetre resolution for neurological and
+                                musculoskeletal imaging.</p>
+                            <a href="store.html"
+                                style="font-weight:600;font-size:0.9rem;color:var(--color-text-dark);text-decoration:none;display:flex;align-items:center;gap:0.4rem;">View
+                                Details <i class="fa-solid fa-arrow-right" style="font-size:0.75rem;"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="idx2-prod-card">
+                        <div style="height:220px;overflow:hidden;border-radius:16px 16px 0 0;">
+                            <img src="images/photo-1516549655169-df83a0774514_edd983.webp" alt="Patient Monitor"
+                                style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
+                        </div>
+                        <div style="padding:1.5rem;">
+                            <span
+                                style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;background:#E8D8CF;padding:0.25rem 0.7rem;border-radius:20px;color:var(--color-text-dark);">Monitoring</span>
+                            <h3
+                                style="font-family:var(--font-heading);font-size:1.3rem;margin:0.75rem 0 0.4rem;color:var(--color-text-dark);">
+                                VitalGuard ICU Pro</h3>
+                            <p style="font-size:0.9rem;opacity:0.65;line-height:1.6;margin-bottom:1.25rem;">Modular
+                                12-parameter bedside monitor with AI-driven early warning scores and seamless EMR
+                                integration.</p>
+                            <a href="store.html"
+                                style="font-weight:600;font-size:0.9rem;color:var(--color-text-dark);text-decoration:none;display:flex;align-items:center;gap:0.4rem;">View
+                                Details <i class="fa-solid fa-arrow-right" style="font-size:0.75rem;"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="idx2-prod-card">
+                        <div style="height:220px;overflow:hidden;border-radius:16px 16px 0 0;">
+                            <img src="images/photo-1530497610245-94d3c16cda28_2278a6.webp" alt="Ultrasound"
+                                style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
+                        </div>
+                        <div style="padding:1.5rem;">
+                            <span
+                                style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;background:#E8D8CF;padding:0.25rem 0.7rem;border-radius:20px;color:var(--color-text-dark);">Imaging</span>
+                            <h3
+                                style="font-family:var(--font-heading);font-size:1.3rem;margin:0.75rem 0 0.4rem;color:var(--color-text-dark);">
+                                SonoMax Elite</h3>
+                            <p style="font-size:0.9rem;opacity:0.65;line-height:1.6;margin-bottom:1.25rem;">Portable
+                                point-of-care ultrasound with AI-assisted measurement tools, built for emergency and
+                                bedside use.</p>
+                            <a href="store.html"
+                                style="font-weight:600;font-size:0.9rem;color:var(--color-text-dark);text-decoration:none;display:flex;align-items:center;gap:0.4rem;">View
+                                Details <i class="fa-solid fa-arrow-right" style="font-size:0.75rem;"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Testimonials ===== -->
+        <section style="padding:7rem 2rem;background:var(--color-bg);">
+            <div style="max-width:1100px;margin:0 auto;">
+                <div style="text-align:center;margin-bottom:3.5rem;">
+                    <p
+                        style="font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#a05b50;margin-bottom:0.5rem;">
+                        Testimonials</p>
+                    <h2 style="font-family:var(--font-heading);font-size:2.8rem;color:var(--color-text-dark);">What
+                        clinicians say</h2>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;" class="idx2-testi-grid">
+
+                    <div class="idx2-testi-card">
+                        <div style="font-size:1.5rem;color:#E8D8CF;margin-bottom:1rem;">"</div>
+                        <p style="font-size:0.97rem;line-height:1.75;opacity:0.75;margin-bottom:1.5rem;">The NeuroScan
+                            3T has transformed our neurology department. Image quality is exceptional and the AI overlay
+                            tools have meaningfully reduced our reporting time.</p>
+                        <div style="display:flex;align-items:center;gap:0.9rem;">
+                            <img src="images/photo-1559839734-2b71ea197ec2_cb2448.webp" alt="Dr. Chen"
+                                style="width:42px;height:42px;border-radius:50%;object-fit:cover;">
+                            <div>
+                                <strong style="display:block;font-size:0.9rem;">Dr. Linda Chen</strong>
+                                <span style="font-size:0.8rem;opacity:0.55;">Head of Radiology, Mass General</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="idx2-testi-card" style="background:var(--color-text-dark);color:var(--color-white);">
+                        <div style="font-size:1.5rem;color:#E8D8CF;margin-bottom:1rem;">"</div>
+                        <p style="font-size:0.97rem;line-height:1.75;opacity:0.75;margin-bottom:1.5rem;">VitalGuard ICU
+                            Pro gave our nursing staff confidence like never before. The early warning alerts have
+                            genuinely prevented critical events on our ward.</p>
+                        <div style="display:flex;align-items:center;gap:0.9rem;">
+                            <img src="images/photo-1612349317150-e413f6a5b16d_31a7d1.webp" alt="Dr. Patel"
+                                style="width:42px;height:42px;border-radius:50%;object-fit:cover;">
+                            <div>
+                                <strong style="display:block;font-size:0.9rem;">Dr. Arjun Patel</strong>
+                                <span style="font-size:0.8rem;opacity:0.55;">ICU Director, Cleveland Clinic</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="idx2-testi-card">
+                        <div style="font-size:1.5rem;color:#E8D8CF;margin-bottom:1rem;">"</div>
+                        <p style="font-size:0.97rem;line-height:1.75;opacity:0.75;margin-bottom:1.5rem;">Stackly's
+                            after-sales support is second to none. Our service contract delivers on every promise — from
+                            quarterly maintenance to 24/7 helpline response.</p>
+                        <div style="display:flex;align-items:center;gap:0.9rem;">
+                            <img src="images/photo-1582750433449-648ed127bb54_e04a34.webp" alt="Sarah O"
+                                style="width:42px;height:42px;border-radius:50%;object-fit:cover;">
+                            <div>
+                                <strong style="display:block;font-size:0.9rem;">Sarah O'Brien</strong>
+                                <span style="font-size:0.55;">Biomedical Manager, Johns Hopkins</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA Banner ===== -->
+        <section style="padding:7rem 2rem;background:#3F322D;text-align:center;position:relative;overflow:hidden;">
+            <div
+                style="position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(232,216,207,0.1) 0%,transparent 65%);pointer-events:none;">
+            </div>
+            <div style="position:relative;max-width:700px;margin:0 auto;">
+                <p
+                    style="font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#E8D8CF;opacity:0.6;margin-bottom:1rem;">
+                    Ready to Upgrade?</p>
+                <h2
+                    style="font-family:var(--font-heading);font-size:3.2rem;color:#fff;line-height:1.15;margin-bottom:1.2rem;">
+                    Equip your facility with the best</h2>
+                <p style="color:rgba(255,255,255,0.55);font-size:1.05rem;line-height:1.7;margin-bottom:2.5rem;">Talk to
+                    a Stackly specialist today — from product selection to full service cover, we handle everything.
+                </p>
+                <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+                    <a href="store.html"
+                        style="background:#E8D8CF;color:#3F322D;padding:1rem 2.5rem;border-radius:50px;font-weight:600;text-decoration:none;transition:background 0.2s;">Browse
+                        Products</a>
+                    <a href="contact.html"
+                        style="background:transparent;color:rgba(255,255,255,0.8);padding:1rem 2.5rem;border-radius:50px;font-weight:600;text-decoration:none;border:1.5px solid rgba(255,255,255,0.2);transition:border-color 0.2s;">Contact
+                        Sales</a>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            /* Index2 extra section styles */
+            .idx2-stat-num {
+                font-family: var(--font-heading);
+                font-size: 3.2rem;
+                font-weight: 700;
+                color: #E8D8CF;
+                line-height: 1;
+            }
+
+            .idx2-prod-card {
+                background: var(--color-white);
+                border-radius: 20px;
+                overflow: hidden;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .idx2-prod-card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            }
+
+            .idx2-prod-card:hover img {
+                transform: scale(1.05);
+            }
+
+            .idx2-testi-card {
+                background: var(--color-white);
+                border-radius: 20px;
+                padding: 2rem;
+            }
+
+            @keyframes idx2LogoScroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+
+            @media (max-width: 900px) {
+                .idx2-prod-grid {
+                    grid-template-columns: 1fr 1fr !important;
+                }
+
+                .idx2-testi-grid {
+                    grid-template-columns: 1fr !important;
+                }
+            }
+
+            @media (max-width: 580px) {
+                .idx2-prod-grid {
+                    grid-template-columns: 1fr !important;
+                }
+            }
+        </style>
+
+    </main>
+
+
+    <!-- Alternative Modern Premium Footer -->
+    <footer class="alt-premium-footer">
+
+
+        <div class="apf-container">
+            <div class="apf-grid">
+                <!-- Branding and Contact Box -->
+                <div class="apf-brand-section">
+                    <img src="./Untitled design (3).webp" alt="Stackly Logo" class="apf-logo">
+                    <h2 class="apf-slogan animate-entry">Engineered for LIFE.</h2>
+
+                    <div class="apf-contact-box">
+                        <p class="apf-address">100 Innovation Way<br>Medical Research Park<br>Boston, MA 02115</p>
+                        <a href="tel:+18005551234" class="apf-phone">+1 (800) 555-1234</a>
+                        <a href="mailto:support@stackly.com" class="apf-email">support@stackly.com</a>
+                    </div>
+                </div>
+
+                <!-- Navigation Columns -->
+                <div class="apf-nav-section">
+                    <div class="apf-col">
+                        <h4 class="apf-title">Specialties</h4>
+                        <ul class="apf-list">
+                            <li><a href="#">Diagnostic Imaging</a></li>
+                            <li><a href="#">Patient Monitoring</a></li>
+                            <li><a href="#">Surgical Integration</a></li>
+                            <li><a href="#">Laboratory Systems</a></li>
+                            <li><a href="#">Critical Care</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="apf-col">
+                        <h4 class="apf-title">Company</h4>
+                        <ul class="apf-list">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Newsletter / CTA -->
+                <div class="apf-cta-section">
+                    <h4 class="apf-title animate-entry">Stay Informed</h4>
+                    <p class="apf-newsletter-text">Subscribe to our clinical insights brief for the latest advancements
+                        in medical technology.</p>
+                    <form class="apf-newsletter-form" onsubmit="event.preventDefault();window.location.href='404.html'">
+                        <input type="email" placeholder="Enter your email address" class="apf-input" required>
+                        <button type="submit" class="apf-submit-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                    </form>
+
+                    <div class="apf-social-icons">
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright Bar -->
+            <div class="apf-bottom-bar">
+                <div class="apf-copyright">
+                    &copy; 2026 Stackly Corporation.
+                </div>
+                <div class="apf-legal-links">
+                    <a href="#">Regulatory</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // New sections: GSAP animations + stats count-up
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+            gsap.registerPlugin(ScrollTrigger);
+
+            // ------ Stats count-up ------
+            let statsAnimated = false;
+            ScrollTrigger.create({
+                trigger: '.idx2-stat',
+                start: 'top 80%',
+                onEnter: () => {
+                    if (statsAnimated) return;
+                    statsAnimated = true;
+
+                    // Slide stats in
+                    gsap.fromTo('.idx2-stat',
+                        { y: 30, opacity: 0 },
+                        { y: 0, opacity: 1, duration: 0.6, stagger: 0.12, ease: 'power2.out' }
+                    );
+
+                    // Count up each number
+                    document.querySelectorAll('.idx2-stat-num').forEach(el => {
+                        const end = parseFloat(el.getAttribute('data-target'));
+                        const suffix = el.getAttribute('data-suffix') || '';
+                        const decimals = parseInt(el.getAttribute('data-decimals') || '0');
+                        const obj = { val: 0 };
+                        gsap.to(obj, {
+                            val: end, duration: 2, ease: 'power2.out', delay: 0.3,
+                            onUpdate: () => { el.textContent = obj.val.toFixed(decimals) + suffix; },
+                            onComplete: () => { el.textContent = end.toFixed(decimals) + suffix; }
+                        });
+                    });
+                }
+            });
+
+            // ------ Product cards stagger ------
+            gsap.utils.toArray('.idx2-prod-card').forEach((card, i) => {
+                gsap.fromTo(card,
+                    { y: 45, opacity: 0 },
+                    {
+                        y: 0, opacity: 1, duration: 0.65, delay: i * 0.1,
+                        ease: 'power2.out',
+                        scrollTrigger: { trigger: card, start: 'top 87%' }
+                    }
+                );
+            });
+
+            // ------ Testimonial cards stagger ------
+            gsap.utils.toArray('.idx2-testi-card').forEach((card, i) => {
+                gsap.fromTo(card,
+                    { y: 35, opacity: 0 },
+                    {
+                        y: 0, opacity: 1, duration: 0.6, delay: i * 0.12,
+                        ease: 'power2.out',
+                        scrollTrigger: { trigger: card, start: 'top 86%' }
+                    }
+                );
+            });
+
+            // ------ CTA banner ------
+            gsap.fromTo('[data-cta-inner]',
+                { y: 40, opacity: 0 },
+                {
+                    y: 0, opacity: 1, duration: 0.8,
+                    scrollTrigger: { trigger: '[data-cta-inner]', start: 'top 82%' }
+                }
+            );
+        });
+    </script>
+</body>
+
+</html>

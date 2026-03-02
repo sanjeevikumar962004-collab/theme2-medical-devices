@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Stackly</title>
+    <meta name="description"
+        content="Learn about Stackly's mission to deliver precision medical devices and transform healthcare worldwide.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ---- About Page Specific Styles ---- */
+        .about-hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(135deg, var(--color-bg) 60%, #E8D8CF 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #E8D8CF 0%, transparent 70%);
+            opacity: 0.5;
+        }
+
+        .about-hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            position: relative;
+        }
+
+        .about-hero-text .eyebrow {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a05b50;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .about-hero-text .eyebrow::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background-color: #a05b50;
+        }
+
+        .about-hero-text h1 {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            line-height: 1.1;
+            color: var(--color-text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-hero-text h1 em {
+            font-style: italic;
+            color: #a05b50;
+        }
+
+        .about-hero-text p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            opacity: 0.75;
+            max-width: 480px;
+        }
+
+        .about-hero-image {
+            position: relative;
+        }
+
+        .about-hero-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+        }
+
+        .about-hero-badge {
+            position: absolute;
+            bottom: -24px;
+            left: -24px;
+            background: var(--color-white);
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .about-hero-badge .badge-icon {
+            width: 50px;
+            height: 50px;
+            background: #E8D8CF;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #a05b50;
+        }
+
+        .about-hero-badge strong {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .about-hero-badge span {
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        /* Stats Band */
+        .about-stats-band {
+            background: var(--color-text-dark);
+            color: var(--color-white);
+            padding: 4rem 2rem;
+        }
+
+        .about-stats-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .astat-num {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #E8D8CF;
+            line-height: 1;
+        }
+
+        .astat-label {
+            font-size: 0.95rem;
+            opacity: 0.65;
+            margin-top: 0.5rem;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            padding: 7rem 2rem;
+            background: var(--color-bg);
+        }
+
+        .mission-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .mission-image img {
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .mission-content .section-eyebrow {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a05b50;
+            margin-bottom: 1rem;
+        }
+
+        .mission-content h2 {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            line-height: 1.15;
+            color: var(--color-text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            opacity: 0.75;
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-pillars {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .pillar-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: var(--color-white);
+            border-radius: 14px;
+        }
+
+        .pillar-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: #E8D8CF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-dark);
+            flex-shrink: 0;
+        }
+
+        .pillar-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .pillar-item p {
+            font-size: 0.9rem;
+            opacity: 0.65;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 7rem 2rem;
+            background: #fcfbf9;
+            text-align: center;
+        }
+
+        .values-section .section-header {
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
+
+        .values-section .section-eyebrow {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a05b50;
+            margin-bottom: 1rem;
+        }
+
+        .values-section h2 {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            line-height: 1.2;
+            color: var(--color-text-dark);
+        }
+
+        .values-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: var(--color-white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.07);
+        }
+
+        .value-card-icon {
+            width: 52px;
+            height: 52px;
+            background: #E8D8CF;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--color-text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .value-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--color-text-dark);
+        }
+
+        .value-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            opacity: 0.7;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 7rem 2rem;
+            background: var(--color-bg);
+        }
+
+        .team-section .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
+
+        .team-section .section-eyebrow {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a05b50;
+            margin-bottom: 1rem;
+        }
+
+        .team-section h2 {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            color: var(--color-text-dark);
+        }
+
+        .team-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: var(--color-white);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-photo {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .team-card:hover .team-photo img {
+            transform: scale(1.05);
+        }
+
+        .team-info {
+            padding: 1.5rem;
+        }
+
+        .team-info h4 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+            color: var(--color-text-dark);
+        }
+
+        .team-info .role {
+            font-size: 0.85rem;
+            color: #a05b50;
+            font-weight: 500;
+        }
+
+        .team-socials {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .team-socials a {
+            width: 30px;
+            height: 30px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-dark);
+            font-size: 0.75rem;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .team-socials a:hover {
+            background: var(--color-text-dark);
+            color: var(--color-white);
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 7rem 2rem;
+            background: #fcfbf9;
+        }
+
+        .timeline-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-section .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .timeline-section .section-eyebrow {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a05b50;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-section h2 {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            color: var(--color-text-dark);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #E8D8CF, var(--color-text-dark), #E8D8CF);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -48px;
+            top: 4px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--color-text-dark);
+            border: 3px solid var(--color-bg);
+            box-shadow: 0 0 0 2px var(--color-text-dark);
+        }
+
+        .timeline-year {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #a05b50;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item h4 {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            color: var(--color-text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            opacity: 0.7;
+        }
+
+        /* CTA Section */
+        .about-cta-section {
+            padding: 7rem 2rem;
+            background: var(--color-text-dark);
+            text-align: center;
+        }
+
+        .about-cta-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-cta-section h2 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: var(--color-white);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-cta-section p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .about-cta-btns {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-light {
+            background: #E8D8CF;
+            color: var(--color-text-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .btn-light:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            color: var(--color-white);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .btn-outline-light:hover {
+            border-color: #E8D8CF;
+            color: #E8D8CF;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+
+            .about-hero-inner,
+            .mission-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-hero-text h1 {
+                font-size: 2.8rem;
+            }
+
+            .about-stats-inner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .about-stats-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="box">
+            <div id="l1">S</div>
+            <div id="l2">T</div>
+            <div id="l3">A</div>
+            <div id="l4">C</div>
+            <div id="l5">K</div>
+            <div id="l6">L</div>
+            <div id="l7">Y</div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="menu-toggle" id="mobile-menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="logo">
+            <img src="./Untitled design (3).webp" alt="Stackly Logo" class="brand-img">
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <div class="mobile-menu-logo">
+                <img src="./Untitled design (3).webp" alt="Stackly Logo" class="brand-img">
+            </div>
+            <li class="has-dropdown">
+                <a href="index.html">Home <i class="fa-solid fa-chevron-down"
+                        style="font-size:0.75rem;margin-left:4px;opacity:0.7;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html">Home 1</a></li>
+                    <li><a href="index2.html">Home 2</a></li>
+                </ul>
+            </li>
+            <li><a href="store.html">Products</a></li>
+            <li><a href="about.html" class="active">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-action">
+            <a href="login.html" class="btn btn-primary">Login</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <div class="about-hero-inner">
+                <div class="about-hero-text">
+                    <div class="eyebrow">About Stackly</div>
+                    <h1>Driven by a <em>Purpose</em> to Heal</h1>
+                    <p>For over two decades, Stackly has been at the forefront of medical innovation — delivering
+                        precision diagnostic tools and life-critical equipment to healthcare facilities across the
+                        globe.</p>
+                </div>
+                <div class="about-hero-image">
+                    <img src="images/photo-1576091160399-112ba8d25d1d_c35d31.webp"
+                        alt="Stackly Team at Work">
+                    <div class="about-hero-badge">
+                        <div class="badge-icon"><i class="fa-solid fa-medal"></i></div>
+                        <div>
+                            <strong>ISO 13485</strong>
+                            <span>Certified Supplier</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Band -->
+        <section class="about-stats-band">
+            <div class="about-stats-inner">
+                <div class="astat-item">
+                    <div class="astat-num">24+</div>
+                    <div class="astat-label">Years of Innovation</div>
+                </div>
+                <div class="astat-item">
+                    <div class="astat-num">10k+</div>
+                    <div class="astat-label">Hospitals Served</div>
+                </div>
+                <div class="astat-item">
+                    <div class="astat-num">68</div>
+                    <div class="astat-label">Countries Worldwide</div>
+                </div>
+                <div class="astat-item">
+                    <div class="astat-num">99.7%</div>
+                    <div class="astat-label">Device Uptime Rate</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="mission-section">
+            <div class="mission-inner">
+                <div class="mission-image">
+                    <img src="images/photo-1530497610245-94d3c16cda28_e94890.webp"
+                        alt="Medical Research">
+                </div>
+                <div class="mission-content">
+                    <div class="section-eyebrow">Our Mission</div>
+                    <h2>Equipping clinicians with tools that save lives</h2>
+                    <p>At Stackly, our mission is simple: engineer and supply the most reliable, accurate, and
+                        accessible medical devices on the planet. Every product we design passes through rigorous
+                        clinical testing before reaching operating rooms and ICUs.</p>
+                    <p>We believe that every patient, regardless of geography or institution, deserves access to
+                        world-class diagnostic precision.</p>
+
+                    <div class="mission-pillars">
+                        <div class="pillar-item">
+                            <div class="pillar-icon"><i class="fa-solid fa-flask"></i></div>
+                            <div>
+                                <h4>Research-First Design</h4>
+                                <p>Every device begins with clinical research co-authored with leading hospitals.</p>
+                            </div>
+                        </div>
+                        <div class="pillar-item">
+                            <div class="pillar-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div>
+                                <h4>Safety Above All</h4>
+                                <p>Rigorous QA and ISO certification ensures zero compromise on patient safety.</p>
+                            </div>
+                        </div>
+                        <div class="pillar-item">
+                            <div class="pillar-icon"><i class="fa-solid fa-earth-americas"></i></div>
+                            <div>
+                                <h4>Global Accessibility</h4>
+                                <p>Tiered pricing and regional partnerships make precision diagnostics accessible
+                                    everywhere.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="values-section">
+            <div class="section-header">
+                <div class="section-eyebrow">Our Values</div>
+                <h2>The principles that guide everything we build</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-card-icon"><i class="fa-solid fa-microscope"></i></div>
+                    <h3>Scientific Integrity</h3>
+                    <p>Every claim we make is backed by peer-reviewed evidence. We don't overpromise — we over-deliver.
+                    </p>
+                </div>
+                <div class="value-card">
+                    <div class="value-card-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h3>Patient-Centric Design</h3>
+                    <p>Our products are designed around real patients — from bore diameter to alert volume levels.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-card-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h3>Relentless Innovation</h3>
+                    <p>12% of annual revenue goes directly into R&D. We're never done improving.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-card-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h3>Trusted Partnerships</h3>
+                    <p>We serve as long-term partners to hospitals — not just one-time vendors.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-card-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <h3>Sustainable Manufacturing</h3>
+                    <p>Carbon-neutral operations by 2027. Our environmental commitments are legally binding.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-card-icon"><i class="fa-solid fa-users"></i></div>
+                    <h3>Inclusive Culture</h3>
+                    <p>Over 40 nationalities work at Stackly. Diversity of thought makes better devices.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="section-header">
+                <div class="section-eyebrow">Leadership</div>
+                <h2>Meet the team behind Stackly</h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="images/photo-1559839734-2b71ea197ec2_5d4440.webp"
+                            alt="Dr. Sarah Chen">
+                    </div>
+                    <div class="team-info">
+                        <h4>Dr. Sarah Chen</h4>
+                        <div class="role">Chief Executive Officer</div>
+                        <div class="team-socials">
+                            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="images/photo-1612349317150-e413f6a5b16d_6cf12a.webp"
+                            alt="Dr. Marcus Webb">
+                    </div>
+                    <div class="team-info">
+                        <h4>Dr. Marcus Webb</h4>
+                        <div class="role">Chief Medical Officer</div>
+                        <div class="team-socials">
+                            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="images/photo-1573497019940-1c28c88b4f3e_624c81.webp"
+                            alt="Priya Nair">
+                    </div>
+                    <div class="team-info">
+                        <h4>Priya Nair</h4>
+                        <div class="role">Head of Engineering</div>
+                        <div class="team-socials">
+                            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="images/photo-1582750433449-648ed127bb54_d59baf.webp"
+                            alt="James Okafor">
+                    </div>
+                    <div class="team-info">
+                        <h4>James Okafor</h4>
+                        <div class="role">VP of Global Sales</div>
+                        <div class="team-socials">
+                            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline-section">
+            <div class="timeline-inner">
+                <div class="section-header">
+                    <div class="section-eyebrow">Our Story</div>
+                    <h2>From a garage to global hospitals</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2001</div>
+                        <h4>Founded in Boston</h4>
+                        <p>Stackly is founded by Dr. Sarah Chen with a $400K seed grant and a team of 6 biomedical
+                            engineers, operating out of a university lab space.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2006</div>
+                        <h4>First FDA Clearance</h4>
+                        <p>Our flagship patient monitoring system receives its first FDA 510(k) clearance, opening the
+                            door to US hospital procurement contracts.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2011</div>
+                        <h4>International Expansion</h4>
+                        <p>Stackly opens regional offices in London, Singapore, and Dubai, bringing our devices to 22
+                            new countries within 18 months.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2018</div>
+                        <h4>AI-Powered Diagnostics</h4>
+                        <p>We launch our proprietary MediCore AI engine — the industry's first FDA-approved AI-assisted
+                            imaging analysis system integrated directly into radiology hardware.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2024</div>
+                        <h4>10,000 Hospitals Milestone</h4>
+                        <p>Stackly devices are now active across 10,000+ hospitals in 68 countries, processing more
+                            than 2 million scans daily.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="about-cta-section">
+            <div class="about-cta-inner">
+                <h2>Ready to equip your facility?</h2>
+                <p>Talk to our medical equipment specialists and discover how Stackly can transform patient outcomes
+                    at your hospital.</p>
+                <div class="about-cta-btns">
+                    <a href="store.html" class="btn-light">Browse Catalog</a>
+                    <a href="#" class="btn-outline-light">Contact Sales</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="alt-premium-footer">
+        <div class="apf-container">
+            <div class="apf-grid">
+                <div class="apf-brand-section">
+                    <img src="./Untitled design (3).webp" alt="Stackly Logo" class="apf-logo">
+                    <h2 class="apf-slogan">Engineered for LIFE.</h2>
+                    <div class="apf-contact-box">
+                        <p class="apf-address">100 Innovation Way<br>Medical Research Park<br>Boston, MA 02115</p>
+                        <a href="tel:+18005551234" class="apf-phone">+1 (800) 555-1234</a>
+                        <a href="mailto:support@stackly.com" class="apf-email">support@stackly.com</a>
+                    </div>
+                </div>
+                <div class="apf-nav-section">
+                    <div class="apf-col">
+                        <h4 class="apf-title">Specialties</h4>
+                        <ul class="apf-list">
+                            <li><a href="#">Diagnostic Imaging</a></li>
+                            <li><a href="#">Patient Monitoring</a></li>
+                            <li><a href="#">Surgical Integration</a></li>
+                            <li><a href="#">Laboratory Systems</a></li>
+                            <li><a href="#">Critical Care</a></li>
+                        </ul>
+                    </div>
+                    <div class="apf-col">
+                        <h4 class="apf-title">Company</h4>
+                        <ul class="apf-list">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="store.html">Products</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="apf-cta-section">
+                    <h4 class="apf-title">Stay Informed</h4>
+                    <p class="apf-newsletter-text">Subscribe to our clinical insights brief for the latest advancements
+                        in medical technology.</p>
+                    <form class="apf-newsletter-form" onsubmit="event.preventDefault();window.location.href='404.html'">
+                        <input type="email" placeholder="Enter your email address" class="apf-input" required>
+                        <button type="submit" class="apf-submit-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                    </form>
+                    <div class="apf-social-icons">
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="apf-bottom-bar">
+                <div class="apf-copyright">&copy; 2026 Stackly Corporation.</div>
+                <div class="apf-legal-links">
+                    <a href="#">Regulatory</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        // Standalone preloader — fires without waiting for images
+        document.addEventListener('DOMContentLoaded', () => {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                setTimeout(() => {
+                    preloader.classList.add('fade-out');
+                    setTimeout(() => { preloader.style.display = 'none'; }, 300);
+                }, 400);
+            }
+
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('mobile-menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            }
+
+            // GSAP scroll animations
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                gsap.utils.toArray('.value-card').forEach((card, i) => {
+                    gsap.fromTo(card,
+                        { y: 40, opacity: 0 },
+                        {
+                            y: 0, opacity: 1, duration: 0.7,
+                            delay: i * 0.08,
+                            scrollTrigger: { trigger: card, start: 'top 85%' }
+                        }
+                    );
+                });
+
+                gsap.utils.toArray('.team-card').forEach((card, i) => {
+                    gsap.fromTo(card,
+                        { y: 30, opacity: 0 },
+                        {
+                            y: 0, opacity: 1, duration: 0.6,
+                            delay: i * 0.1,
+                            scrollTrigger: { trigger: card, start: 'top 85%' }
+                        }
+                    );
+                });
+
+                gsap.utils.toArray('.timeline-item').forEach((item) => {
+                    gsap.fromTo(item,
+                        { x: -30, opacity: 0 },
+                        {
+                            x: 0, opacity: 1, duration: 0.6,
+                            scrollTrigger: { trigger: item, start: 'top 85%' }
+                        }
+                    );
+                });
+
+                // Hero text entrance
+                gsap.fromTo('.about-hero-text',
+                    { x: -50, opacity: 0 },
+                    { x: 0, opacity: 1, duration: 1, ease: 'power3.out', delay: 0.5 }
+                );
+                gsap.fromTo('.about-hero-image',
+                    { x: 50, opacity: 0 },
+                    { x: 0, opacity: 1, duration: 1, ease: 'power3.out', delay: 0.6 }
+                );
+
+                // ---- Stats Band Count-Up Animation ----
+                // Configuration: each stat defined as { targetEl, end, decimals, suffix }
+                const statsConfig = [
+                    { selector: '.astat-item:nth-child(1) .astat-num', end: 24, decimals: 0, suffix: '+' },
+                    { selector: '.astat-item:nth-child(2) .astat-num', end: 10, decimals: 0, suffix: 'k+' },
+                    { selector: '.astat-item:nth-child(3) .astat-num', end: 68, decimals: 0, suffix: '' },
+                    { selector: '.astat-item:nth-child(4) .astat-num', end: 99.7, decimals: 1, suffix: '%' }
+                ];
+
+                let statsAnimated = false;
+
+                ScrollTrigger.create({
+                    trigger: '.about-stats-band',
+                    start: 'top 75%',
+                    onEnter: () => {
+                        if (statsAnimated) return;
+                        statsAnimated = true;
+
+                        // Animate the whole band sliding up
+                        gsap.fromTo('.astat-item',
+                            { y: 30, opacity: 0 },
+                            { y: 0, opacity: 1, duration: 0.6, stagger: 0.15, ease: 'power2.out' }
+                        );
+
+                        // Count-up for each number
+                        statsConfig.forEach(({ selector, end, decimals, suffix }) => {
+                            const el = document.querySelector(selector);
+                            if (!el) return;
+
+                            const obj = { val: 0 };
+                            gsap.to(obj, {
+                                val: end,
+                                duration: 2,
+                                ease: 'power2.out',
+                                delay: 0.3,
+                                onUpdate: () => {
+                                    el.textContent = obj.val.toFixed(decimals) + suffix;
+                                },
+                                onComplete: () => {
+                                    el.textContent = end.toFixed(decimals) + suffix;
+                                }
+                            });
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

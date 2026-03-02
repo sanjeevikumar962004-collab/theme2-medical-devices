@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | Stackly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            font-family: var(--font-body, 'Inter', sans-serif);
+            background: #F7F3F0;
+        }
+
+        .auth-left {
+            width: 42%;
+            background: #3F322D;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .auth-left::before {
+            content: '';
+            position: absolute;
+            top: -150px;
+            left: -150px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(232, 216, 207, 0.1) 0%, transparent 65%);
+        }
+
+        .auth-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .auth-logo img {
+            height: 36px;
+        }
+
+        .auth-logo span {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #E8D8CF;
+            font-weight: 600;
+        }
+
+        .auth-left-body {
+            position: relative;
+            z-index: 1;
+        }
+
+        .auth-left-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+        }
+
+        .auth-left-body h2 em {
+            font-style: italic;
+            color: #E8D8CF;
+        }
+
+        .auth-left-body p {
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .auth-perks {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .auth-perk {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+        }
+
+        .perk-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(232, 216, 207, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #E8D8CF;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .auth-perk span {
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.4;
+        }
+
+        .auth-right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2.5rem 2rem;
+            overflow-y: auto;
+        }
+
+        .auth-box {
+            width: 100%;
+            max-width: 460px;
+        }
+
+        .auth-box h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #3F322D;
+            margin-bottom: 0.4rem;
+        }
+
+        .auth-box>p {
+            font-size: 0.92rem;
+            color: #666;
+            margin-bottom: 1.75rem;
+        }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-field.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-field label {
+            font-size: 0.83rem;
+            font-weight: 600;
+            color: #3F322D;
+        }
+
+        .field-wrap {
+            position: relative;
+        }
+
+        .field-wrap input,
+        .field-wrap select {
+            width: 100%;
+            padding: 0.8rem 2.8rem 0.8rem 1rem;
+            border: 1.5px solid rgba(0, 0, 0, 0.12);
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 0.93rem;
+            color: #3F322D;
+            background: #fff;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .field-wrap input:focus,
+        .field-wrap select:focus {
+            border-color: #3F322D;
+        }
+
+        .field-wrap input.error {
+            border-color: #e05c5c;
+        }
+
+        .field-icon {
+            position: absolute;
+            right: 0.9rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #bbb;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        .field-error {
+            font-size: 0.76rem;
+            color: #e05c5c;
+            display: none;
+        }
+
+        .field-error.show {
+            display: block;
+        }
+
+        /* Password strength */
+        .strength-bar {
+            height: 4px;
+            border-radius: 4px;
+            background: #eee;
+            margin-top: 0.4rem;
+            overflow: hidden;
+        }
+
+        .strength-fill {
+            height: 100%;
+            width: 0;
+            border-radius: 4px;
+            transition: width 0.4s, background 0.4s;
+        }
+
+        .strength-label {
+            font-size: 0.74rem;
+            margin-top: 0.2rem;
+        }
+
+        .terms-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.84rem;
+            color: #555;
+        }
+
+        .terms-row input {
+            accent-color: #3F322D;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .terms-row a {
+            color: #a05b50;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 0.95rem;
+            background: #3F322D;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .auth-btn:hover {
+            opacity: 0.88;
+            transform: translateY(-1px);
+        }
+
+        .auth-footer-text {
+            text-align: center;
+            font-size: 0.88rem;
+            color: #666;
+            margin-top: 1.1rem;
+        }
+
+        .auth-footer-text a {
+            color: #a05b50;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .auth-left {
+                width: 100%;
+                padding: 2rem;
+            }
+
+            .auth-left-body h2 {
+                font-size: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth-left">
+        <div class="auth-logo">
+            <img src="./Untitled design (3).webp" alt="Stackly">
+            <span>Stackly</span>
+        </div>
+        <div class="auth-left-body">
+            <h2>Join <em>10,000+</em> healthcare facilities</h2>
+            <p>Create your Stackly account and unlock your facility's full suite of device management, ordering, and
+                support tools.</p>
+        </div>
+        <div class="auth-perks">
+            <div class="auth-perk">
+                <div class="perk-icon"><i class="fa-solid fa-boxes-stacked"></i></div><span>Manage your entire device
+                    fleet from one dashboard</span>
+            </div>
+            <div class="auth-perk">
+                <div class="perk-icon"><i class="fa-solid fa-headset"></i></div><span>Priority access to 24/7 technical
+                    support</span>
+            </div>
+            <div class="auth-perk">
+                <div class="perk-icon"><i class="fa-solid fa-tag"></i></div><span>Exclusive institutional pricing and
+                    early access to new products</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="auth-right">
+        <div class="auth-box">
+            <h1>Create account</h1>
+            <p>Fill in your details to get started</p>
+
+            <form class="auth-form" id="signup-form" novalidate>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="su-first">First Name *</label>
+                        <div class="field-wrap">
+                            <input type="text" id="su-first" placeholder="John">
+                            <i class="fa-solid fa-user field-icon"></i>
+                        </div>
+                        <span class="field-error" id="err-first">Required.</span>
+                    </div>
+                    <div class="form-field">
+                        <label for="su-last">Last Name *</label>
+                        <div class="field-wrap">
+                            <input type="text" id="su-last" placeholder="Doe">
+                        </div>
+                        <span class="field-error" id="err-last">Required.</span>
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label for="su-email">Work Email *</label>
+                    <div class="field-wrap">
+                        <input type="email" id="su-email" placeholder="you@hospital.com">
+                        <i class="fa-solid fa-envelope field-icon"></i>
+                    </div>
+                    <span class="field-error" id="err-su-email">Enter a valid email address.</span>
+                </div>
+
+                <div class="form-field">
+                    <label for="su-org">Organisation *</label>
+                    <div class="field-wrap">
+                        <input type="text" id="su-org" placeholder="City General Hospital">
+                        <i class="fa-solid fa-hospital field-icon"></i>
+                    </div>
+                    <span class="field-error" id="err-org">Required.</span>
+                </div>
+
+                <div class="form-field">
+                    <label for="su-pass">Password *</label>
+                    <div class="field-wrap">
+                        <input type="password" id="su-pass" placeholder="Min. 8 characters" autocomplete="new-password">
+                        <i class="fa-solid fa-eye field-icon" id="toggle-su-pass"></i>
+                    </div>
+                    <div class="strength-bar">
+                        <div class="strength-fill" id="strength-fill"></div>
+                    </div>
+                    <span class="strength-label" id="strength-label" style="color:#aaa;">Strength: —</span>
+                    <span class="field-error" id="err-su-pass">Minimum 8 characters.</span>
+                </div>
+
+                <div class="form-field">
+                    <label for="su-confirm">Confirm Password *</label>
+                    <div class="field-wrap">
+                        <input type="password" id="su-confirm" placeholder="Repeat password">
+                        <i class="fa-solid fa-eye field-icon" id="toggle-su-confirm"></i>
+                    </div>
+                    <span class="field-error" id="err-confirm">Passwords do not match.</span>
+                </div>
+
+                <div class="terms-row">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">I agree to the <a href="404.html">Terms of Service</a> and <a
+                            href="404.html">Privacy Policy</a></label>
+                </div>
+                <span class="field-error" id="err-terms">You must accept the terms to continue.</span>
+
+                <button type="submit" class="auth-btn">Create Account &nbsp;<i class="fa-solid fa-arrow-right"
+                        style="font-size:0.85rem;"></i></button>
+            </form>
+
+            <p class="auth-footer-text">Already have an account? <a href="login.html">Sign in</a></p>
+            <p class="auth-footer-text" style="margin-top:0.5rem;"><a href="index.html"
+                    style="color:#aaa;font-weight:400;font-size:0.8rem;"><i class="fa-solid fa-arrow-left"
+                        style="font-size:0.7rem;"></i> Back to website</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Toggle password visibility
+        function setupToggle(inputId, toggleId) {
+            const input = document.getElementById(inputId);
+            const btn = document.getElementById(toggleId);
+            btn.addEventListener('click', () => {
+                const hidden = input.type === 'password';
+                input.type = hidden ? 'text' : 'password';
+                btn.className = hidden ? 'fa-solid fa-eye-slash field-icon' : 'fa-solid fa-eye field-icon';
+            });
+        }
+        setupToggle('su-pass', 'toggle-su-pass');
+        setupToggle('su-confirm', 'toggle-su-confirm');
+
+        // Password strength
+        document.getElementById('su-pass').addEventListener('input', function () {
+            const v = this.value;
+            const fill = document.getElementById('strength-fill');
+            const label = document.getElementById('strength-label');
+            let score = 0;
+            if (v.length >= 8) score++;
+            if (/[A-Z]/.test(v)) score++;
+            if (/[0-9]/.test(v)) score++;
+            if (/[^A-Za-z0-9]/.test(v)) score++;
+            const levels = [
+                { pct: '0%', color: '#eee', text: '—' },
+                { pct: '25%', color: '#e05c5c', text: 'Weak' },
+                { pct: '50%', color: '#f0a500', text: 'Fair' },
+                { pct: '75%', color: '#5bc0de', text: 'Good' },
+                { pct: '100%', color: '#4caf50', text: 'Strong' }
+            ];
+            const lvl = levels[score];
+            fill.style.width = lvl.pct;
+            fill.style.background = lvl.color;
+            label.textContent = 'Strength: ' + lvl.text;
+            label.style.color = lvl.color;
+        });
+
+        // Form validation
+        document.getElementById('signup-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            let valid = true;
+            const fields = [
+                { id: 'su-first', errId: 'err-first', check: v => v.trim() !== '' },
+                { id: 'su-last', errId: 'err-last', check: v => v.trim() !== '' },
+                { id: 'su-email', errId: 'err-su-email', check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+                { id: 'su-org', errId: 'err-org', check: v => v.trim() !== '' },
+                { id: 'su-pass', errId: 'err-su-pass', check: v => v.length >= 8 },
+            ];
+            fields.forEach(({ id, errId, check }) => {
+                const el = document.getElementById(id);
+                const err = document.getElementById(errId);
+                el.classList.remove('error'); err.classList.remove('show');
+                if (!check(el.value)) { el.classList.add('error'); err.classList.add('show'); valid = false; }
+            });
+            const pass = document.getElementById('su-pass').value;
+            const confirm = document.getElementById('su-confirm');
+            const errConfirm = document.getElementById('err-confirm');
+            confirm.classList.remove('error'); errConfirm.classList.remove('show');
+            if (confirm.value !== pass) { confirm.classList.add('error'); errConfirm.classList.add('show'); valid = false; }
+
+            const terms = document.getElementById('terms');
+            const errTerms = document.getElementById('err-terms');
+            errTerms.classList.remove('show');
+            if (!terms.checked) { errTerms.classList.add('show'); valid = false; }
+
+            if (valid) window.location.href = '404.html';
+        });
+    </script>
+</body>
+
+</html>

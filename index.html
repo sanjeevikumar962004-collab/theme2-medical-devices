@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly | Precision Medical Devices</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="box">
+            <div id="l1">S</div>
+            <div id="l2">T</div>
+            <div id="l3">A</div>
+            <div id="l4">C</div>
+            <div id="l5">K</div>
+            <div id="l6">L</div>
+            <div id="l7">Y</div>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="menu-toggle" id="mobile-menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div class="logo">
+            <img src="./Untitled design (3).webp" alt="Stackly Logo" class="brand-img">
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+            <div class="mobile-menu-logo">
+                <img src="./Untitled design (3).webp" alt="Stackly Logo" class="brand-img">
+            </div>
+            <li class="has-dropdown">
+                <a href="index.html" class="active">Home <i class="fa-solid fa-chevron-down"
+                        style="font-size: 0.75rem; margin-left: 4px; opacity: 0.7;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html">Home 1</a></li>
+                    <li><a href="index2.html">Home 2</a></li>
+                </ul>
+            </li>
+            <li><a href="./store.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-action">
+            <a href="login.html" class="btn btn-primary">Login</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title animate-entry">Precision,<br>reliable equipment<br>starts here</h1>
+                <p class="hero-subtitle animate-entry">Advanced medical devices and next-generation diagnostic tools
+                    designed to
+                    improve patient outcomes.</p>
+            </div>
+
+            <div class="floating-card card-left">
+                <div class="card-icon">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+                <div class="card-text">
+                    <strong>ISO Certified</strong>
+                    <span>Equipment Supplier</span>
+                </div>
+            </div>
+
+            <!-- Animated Medical Device Image -->
+            <div class="hero-device-wrapper">
+                <img src="./device.webp" alt="High-Tech Medical Device" class="hero-device-img"
+                    style="box-shadow: none; filter: drop-shadow(0 25px 35px rgba(0,0,0,0.15)); transform: scale(1.15);">
+            </div>
+        </section>
+
+        <!-- Interactive Image Section -->
+        <section class="interactive-image-section">
+            <div class="image-wrapper">
+                <!-- Large medical-themed background image -->
+                <img src="./pexels-bella-gitnik-124838490-9973861.webp" alt="Medical Technology" class="bg-image">
+
+                <!-- Treatment Arc Container -->
+                <div class="arc-container" id="arcContainer">
+                    <!-- Pills injected via JS -->
+                </div>
+
+                <div class="cutout-shape"></div>
+
+                <!-- Call to Action below the arc -->
+                <div class="cta-bottom">
+                    <i class="fa-solid fa-asterisk star-icon"></i> Explore our devices
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture Showcase Section -->
+        <section class="architecture-showcase">
+            <div class="arch-container">
+                <div class="spacer"></div>
+
+                <div class="arch">
+                    <div class="arch__left">
+                        <div class="arch__info animate-entry" id="mri-arch">
+                            <div class="content">
+                                <h2 class="header">MRI Systems</h2>
+                                <p class="desc">Our high-resolution magnetic resonance imaging systems provide
+                                    unparalleled clarity for accurate neurological, musculoskeletal, and cardiovascular
+                                    diagnostics. Utilizing advanced AI-driven noise reduction and ultra-fast scanning
+                                    protocols, these machines dramatically reduce patient anxiety and scan times. Built
+                                    with a 70cm wide bore and an immersive in-bore experience, patient comfort is
+                                    prioritized without sacrificing clinical excellence.</p>
+                                <a class="link" href="#" style="background-color: #D5FF37">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="none">
+                                        <path fill="#121212"
+                                            d="M5 2c0 1.105-1.895 2-3 2a2 2 0 1 1 0-4c1.105 0 3 .895 3 2ZM11 3.5c0 1.105-.895 3-2 3s-2-1.895-2-3a2 2 0 1 1 4 0ZM6 9a2 2 0 1 1-4 0c0-1.105.895-3 2-3s2 1.895 2 3Z" />
+                                    </svg> <span>Tech Specs</span></a>
+                            </div>
+                        </div>
+
+                        <div class="arch__info animate-entry" id="ultrasound-arch">
+                            <div class="content">
+                                <h2 class="header">Next-Gen Ultrasound</h2>
+                                <p class="desc">Portable and highly ergonomic ultrasound machines delivering real-time,
+                                    high-fidelity imaging for fast and reliable point-of-care decisions. Featuring
+                                    intuitive touch-screen interfaces, automated tissue recognition, and integrated
+                                    Doppler capabilities, clinicians can diagnose complex conditions at the bedside.
+                                    Engineered for durability, these devices effortlessly transition from the ER to
+                                    routine outpatient clinics.</p>
+                                <a class="link" href="#" style="background-color: #7DD6FF">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="none">
+                                        <path fill="#121212"
+                                            d="M5 2c0 1.105-1.895 2-3 2a2 2 0 1 1 0-4c1.105 0 3 .895 3 2ZM11 3.5c0 1.105-.895 3-2 3s-2-1.895-2-3a2 2 0 1 1 4 0ZM6 9a2 2 0 1 1-4 0c0-1.105.895-3 2-3s2 1.895 2 3Z" />
+                                    </svg> <span>View Models</span></a>
+                            </div>
+                        </div>
+
+                        <div class="arch__info animate-entry" id="surgical-arch">
+                            <div class="content">
+                                <h2 class="header">Surgical Robotics</h2>
+                                <p class="desc">State-of-the-art robotic systems that empower surgeons to perform
+                                    minimally invasive procedures with enhanced dexterity, microscopic precision, and
+                                    complete 3D high-definition vision. By translating hand movements into smaller, more
+                                    precise movements of tiny instruments inside the patient's body, our platforms
+                                    significantly minimize surgical trauma around delicate tissues, ultimately
+                                    accelerating patient recovery times.</p>
+                                <a class="link" href="#" style="background-color: #FFA0B0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="none">
+                                        <path fill="#121212"
+                                            d="M5 2c0 1.105-1.895 2-3 2a2 2 0 1 1 0-4c1.105 0 3 .895 3 2ZM11 3.5c0 1.105-.895 3-2 3s-2-1.895-2-3a2 2 0 1 1 4 0ZM6 9a2 2 0 1 1-4 0c0-1.105.895-3 2-3s2 1.895 2 3Z" />
+                                    </svg> <span>See Capabilities</span></a>
+                            </div>
+                        </div>
+
+                        <div class="arch__info animate-entry" id="monitor-arch">
+                            <div class="content">
+                                <h2 class="header">Patient Monitors</h2>
+                                <p class="desc">Comprehensive monitoring solutions tracking vital signs continuously,
+                                    complete with predictive alerts designed specifically for intensive and critical
+                                    care units. With seamless cellular integration and cloud-synced patient dashboards,
+                                    clinicians stay informed no matter where they are. The multi-parameter displays are
+                                    completely customizable to focus on what matters most for rapid clinical
+                                    stabilization.</p>
+                                <a class="link" href="#" style="background-color: #FFA17B">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="none">
+                                        <path fill="#121212"
+                                            d="M5 2c0 1.105-1.895 2-3 2a2 2 0 1 1 0-4c1.105 0 3 .895 3 2ZM11 3.5c0 1.105-.895 3-2 3s-2-1.895-2-3a2 2 0 1 1 4 0ZM6 9a2 2 0 1 1-4 0c0-1.105.895-3 2-3s2 1.895 2 3Z" />
+                                    </svg> <span>Explore Telemetry</span></a>
+                            </div>
+                        </div>
+
+                        <div class="arch__info animate-entry" id="ventilator-arch">
+                            <div class="content">
+                                <h2 class="header">Ventilators</h2>
+                                <p class="desc">Intelligent, highly adaptive respiratory care platforms designed to
+                                    provide personalized, life-saving ventilation therapies for adult, pediatric, and
+                                    neonatal patients. Our ventilators employ proprietary algorithms to safely assist
+                                    spontaneous breathing, weaning patients faster and reducing the risk of
+                                    ventilation-acquired conditions in the ICU.</p>
+                                <a class="link" href="#" style="background-color: #A78BFA">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="none">
+                                        <path fill="#121212"
+                                            d="M5 2c0 1.105-1.895 2-3 2a2 2 0 1 1 0-4c1.105 0 3 .895 3 2ZM11 3.5c0 1.105-.895 3-2 3s-2-1.895-2-3a2 2 0 1 1 4 0ZM6 9a2 2 0 1 1-4 0c0-1.105.895-3 2-3s2 1.895 2 3Z" />
+                                    </svg> <span>Respiratory Care</span></a>
+                            </div>
+                        </div>
+
+                        <div class="arch__info animate-entry" id="lab-arch">
+                            <div class="content">
+                                <h2 class="header">Lab Diagnostics</h2>
+                                <p class="desc">Fully automated hematology, chemistry, and molecular immunology
+                                    analyzers that streamline massive laboratory workflows. Built to eliminate manual
+                                    handling errors, these systems ensure consistently rapid and accurate test results
+                                    utilizing closed-tube sampling and sophisticated reagent monitoring to process
+                                    thousands of patient samples an hour seamlessly.</p>
+                                <a class="link" href="#" style="background-color: #FDBA74">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="none">
+                                        <path fill="#121212"
+                                            d="M5 2c0 1.105-1.895 2-3 2a2 2 0 1 1 0-4c1.105 0 3 .895 3 2ZM11 3.5c0 1.105-.895 3-2 3s-2-1.895-2-3a2 2 0 1 1 4 0ZM6 9a2 2 0 1 1-4 0c0-1.105.895-3 2-3s2 1.895 2 3Z" />
+                                    </svg> <span>View Analyzers</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="arch__right">
+                        <div class="img-wrapper" data-index="6">
+                            <img src="images/photo-1579684385127-1ef15d508118_99b37e.webp" alt="MRI Systems">
+                        </div>
+
+                        <div class="img-wrapper" data-index="5">
+                            <img src="images/photo-1530497610245-94d3c16cda28_e94890.webp" alt="Ultrasound">
+                        </div>
+
+                        <div class="img-wrapper" data-index="4">
+                            <img src="images/photo-1583324113626-70df0f4deaab_1f39e9.webp" alt="Surgical Robotics">
+                        </div>
+
+                        <div class="img-wrapper" data-index="3">
+                            <img src="images/photo-1516549655169-df83a0774514_7b688c.webp" alt="Patient Monitors">
+                        </div>
+
+                        <div class="img-wrapper" data-index="2">
+                            <img src="images/photo-1584362917165-526a968579e8_3dba04.webp" alt="Ventilators">
+                        </div>
+
+                        <div class="img-wrapper" data-index="1">
+                            <img src="images/photo-1579684453423-f84349ef60b0_f2eae9.webp" alt="Lab Diagnostics">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spacer"></div>
+            </div>
+        </section>
+
+        <!-- Infinite Scrolling Text Marquee -->
+        <section class="text-marquee-section">
+            <div class="marquee-container">
+                <div class="marquee-content" id="marquee-content">
+                    <span class="marquee-item">ANXIETY <span class="marquee-separator">✺</span></span>
+                    <span class="marquee-item">DEPRESSION <span class="marquee-separator">✺</span></span>
+                    <span class="marquee-item">TRAUMA <span class="marquee-separator">✺</span></span>
+                    <span class="marquee-item">STRESS <span class="marquee-separator">✺</span></span>
+                    <span class="marquee-item">BURNOUT <span class="marquee-separator">✺</span></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medical Equipment Services Section -->
+        <section class="mh-services-section">
+            <div class="mh-services-header">
+                <div class="mh-top-badge animate-entry">
+                    <span class="mh-blue-dot"></span> Equipment Services
+                </div>
+                <h2 class="mh-main-headline animate-entry">
+                    Advanced Medical<br>
+                    Solutions to <span class="mh-accent-italic">Equip Your Facility</span>
+                </h2>
+            </div>
+
+            <div class="mh-services-list">
+                <!-- Row 1: Surgical Instruments -->
+                <div class="mh-service-row" data-service="surgical">
+                    <div class="mh-row-indicator"></div>
+                    <div class="mh-col-title">
+                        <h3>Surgical Instruments</h3>
+                    </div>
+                    <div class="mh-col-img">
+                        <img src="images/photo-1583324113626-70df0f4deaab_1f39e9.webp" alt="Surgical Instruments">
+                    </div>
+                    <div class="mh-col-desc">
+                        <p>High-precision tools and systems designed to support successful surgical outcomes.</p>
+                    </div>
+                    <div class="mh-col-action">
+                        <div class="mh-action-btn">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2: Patient Monitoring -->
+                <div class="mh-service-row" data-service="monitoring">
+                    <div class="mh-row-indicator"></div>
+                    <div class="mh-col-title">
+                        <h3>Patient Monitoring</h3>
+                    </div>
+                    <div class="mh-col-img">
+                        <img src="images/photo-1516549655169-df83a0774514_7b688c.webp" alt="Patient Monitoring">
+                    </div>
+                    <div class="mh-col-desc">
+                        <p>Continuous physiological monitoring systems for comprehensive patient oversight.</p>
+                    </div>
+                    <div class="mh-col-action">
+                        <div class="mh-action-btn">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3: Diagnostic Imaging -->
+                <div class="mh-service-row" data-service="imaging">
+                    <div class="mh-row-indicator"></div>
+                    <div class="mh-col-title">
+                        <h3>Diagnostic Imaging</h3>
+                    </div>
+                    <div class="mh-col-img">
+                        <img src="images/photo-1530497610245-94d3c16cda28_e94890.webp"
+                            alt="Diagnostic Imaging Equipment">
+                    </div>
+                    <div class="mh-col-desc">
+                        <p>State-of-the-art imaging systems for precise and reliable patient diagnostics.</p>
+                    </div>
+                    <div class="mh-col-action">
+                        <div class="mh-action-btn">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 4: Critical Care Equipment -->
+                <div class="mh-service-row" data-service="critical-care">
+                    <div class="mh-row-indicator"></div>
+                    <div class="mh-col-title">
+                        <h3>Critical Care Equipment</h3>
+                    </div>
+                    <div class="mh-col-img">
+                        <img src="images/photo-1516549655169-df83a0774514_7b688c.webp" alt="Critical Care Monitors">
+                    </div>
+                    <div class="mh-col-desc">
+                        <p>Advanced life support and monitoring devices designed for intensive care units.</p>
+                    </div>
+                    <div class="mh-col-action">
+                        <div class="mh-action-btn">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience / About Section -->
+        <section class="experience-section">
+            <div class="exp-container">
+                <div class="exp-left">
+                    <h5 class="exp-label animate-entry">WHO ARE WE?</h5>
+                    <div class="exp-number-wrapper animate-entry">
+                        <span class="exp-number">18</span>
+                        <span class="exp-vertical-text">YEARS OF MEDICAL<br>DEVICE EXPERIENCE</span>
+                    </div>
+
+                    <div class="exp-trust-wrapper">
+                        <div class="trust-avatars">
+                            <img src="images/photo-1573497019940-1c28c88b4f3e_624c81.webp" alt="Doctor 1"
+                                class="avatar">
+                            <img src="images/photo-1612349317150-e413f6a5b16d_31a7d1.webp" alt="Doctor 2"
+                                class="avatar">
+                            <img src="images/photo-1622253692010-333f2da6031d_264b2d.webp" alt="Doctor 3"
+                                class="avatar">
+                        </div>
+                        <div class="trust-text">
+                            <strong>TRUSTED BY THOUSANDS FOR</strong>
+                            <span>CLINICAL SUPPORT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exp-right">
+                    <p class="exp-description animate-entry">
+                        We are a dedicated team of licensed medical engineers and healthcare
+                        professionals with over 18 years of experience in providing innovative,
+                        evidence-based technical care. Our mission is to help hospitals, clinics, and surgical
+                        centers find clarity, reliability, and precision in their equipment usage.
+                    </p>
+                    <a href="#" class="exp-link">Let's begin your equipment upgrade</a>
+
+                    <div class="exp-image-wrapper">
+                        <img src="images/photo-1581594693702-fbdc51b2763b_db442a.webp" alt="Medical Consultation"
+                            class="exp-hero-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Categories Section -->
+        <section class="featured-categories-section">
+            <div class="fc-header">
+                <span class="fc-subtitle animate-entry">Premium Selection</span>
+                <h2 class="fc-title animate-entry">Explore Our Device Categories</h2>
+            </div>
+
+            <div class="fc-grid">
+                <div class="fc-card">
+                    <div class="fc-img-wrapper">
+                        <img src="images/photo-1516549655169-df83a0774514_7c6cc0.webp" alt="Monitoring">
+                    </div>
+                    <div class="fc-content">
+                        <h3>Monitoring</h3>
+                        <p>Vital signs & advanced telemetry</p>
+                        <a href="#" class="fc-link"><i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+
+                <div class="fc-card">
+                    <div class="fc-img-wrapper">
+                        <img src="images/photo-1530497610245-94d3c16cda28_d6b6a4.webp" alt="Imaging">
+                    </div>
+                    <div class="fc-content">
+                        <h3>Imaging</h3>
+                        <p>Ultrasound, X-Ray & MRI systems</p>
+                        <a href="#" class="fc-link"><i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+
+                <div class="fc-card">
+                    <div class="fc-img-wrapper">
+                        <img src="images/photo-1583324113626-70df0f4deaab_f6ac44.webp" alt="Surgical">
+                    </div>
+                    <div class="fc-content">
+                        <h3>Surgical</h3>
+                        <p>Precision instruments & tables</p>
+                        <a href="#" class="fc-link"><i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+
+                <div class="fc-card">
+                    <div class="fc-img-wrapper">
+                        <img src="images/photo-1579684385127-1ef15d508118_6616ba.webp" alt="Laboratory">
+                    </div>
+                    <div class="fc-content">
+                        <h3>Laboratory</h3>
+                        <p>Analyzers & diagnostic tools</p>
+                        <a href="#" class="fc-link"><i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-marquee-section">
+            <div class="marquee-container">
+                <div class="marquee-content" id="marquee-content">
+                    <span class="marquee-item">ANXIETY <span class="marquee-separator">✺</span></span>
+                    <span class="marquee-item">DEPRESSION <span class="marquee-separator">✺</span></span>
+                    <span class="marquee-item">TRAUMA <span class="marquee-separator">✺</span></span>
+                    <span class="marquee-item">STRESS <span class="marquee-separator">✺</span></span>
+                    <span class="marquee-item">BURNOUT <span class="marquee-separator">✺</span></span>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <!-- Alternative Modern Premium Footer -->
+    <footer class="alt-premium-footer">
+
+
+        <div class="apf-container">
+            <div class="apf-grid">
+                <!-- Branding and Contact Box -->
+                <div class="apf-brand-section">
+                    <img src="./Untitled design (3).webp" alt="Stackly Logo" class="apf-logo">
+                    <h2 class="apf-slogan animate-entry">Engineered for LIFE.</h2>
+
+                    <div class="apf-contact-box">
+                        <p class="apf-address">100 Innovation Way<br>Medical Research Park<br>Boston, MA 02115</p>
+                        <a href="tel:+18005551234" class="apf-phone">+1 (800) 555-1234</a>
+                        <a href="mailto:support@stackly.com" class="apf-email">support@stackly.com</a>
+                    </div>
+                </div>
+
+                <!-- Navigation Columns -->
+                <div class="apf-nav-section">
+                    <div class="apf-col">
+                        <h4 class="apf-title">Specialties</h4>
+                        <ul class="apf-list">
+                            <li><a href="#">Diagnostic Imaging</a></li>
+                            <li><a href="#">Patient Monitoring</a></li>
+                            <li><a href="#">Surgical Integration</a></li>
+                            <li><a href="#">Laboratory Systems</a></li>
+                            <li><a href="#">Critical Care</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="apf-col">
+                        <h4 class="apf-title">Company</h4>
+                        <ul class="apf-list">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Newsletter / CTA -->
+                <div class="apf-cta-section">
+                    <h4 class="apf-title animate-entry">Stay Informed</h4>
+                    <p class="apf-newsletter-text">Subscribe to our clinical insights brief for the latest advancements
+                        in medical technology.</p>
+                    <form class="apf-newsletter-form" onsubmit="event.preventDefault();window.location.href='404.html'">
+                        <input type="email" placeholder="Enter your email address" class="apf-input" required>
+                        <button type="submit" class="apf-submit-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                    </form>
+
+                    <div class="apf-social-icons">
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright Bar -->
+            <div class="apf-bottom-bar">
+                <div class="apf-copyright">
+                    &copy; 2026 Stackly Corporation.
+                </div>
+                <div class="apf-legal-links">
+                    <a href="#">Regulatory</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

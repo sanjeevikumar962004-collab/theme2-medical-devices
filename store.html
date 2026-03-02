@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Catalog | Stackly</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="box">
+            <div id="l1">S</div>
+            <div id="l2">T</div>
+            <div id="l3">A</div>
+            <div id="l4">C</div>
+            <div id="l5">K</div>
+            <div id="l6">L</div>
+            <div id="l7">Y</div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="menu-toggle" id="mobile-menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div class="logo">
+            <img src="./Untitled design (3).webp" alt="Whito Logo" class="brand-img">
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+            <div class="mobile-menu-logo">
+                <img src=".//Untitled design (3).webp" alt="Whito Logo" class="brand-img">
+            </div>
+            <li class="has-dropdown">
+                <a href="index.html">Home <i class="fa-solid fa-chevron-down"
+                        style="font-size: 0.75rem; margin-left: 4px; opacity: 0.7;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html">Home 1</a></li>
+                    <li><a href="index2.html">Home 2</a></li>
+                </ul>
+            </li>
+            <li><a href="./product.html" class="active">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-action" style="display: flex; gap: 1rem; align-items: center;">
+            <div class="cart-trigger" id="cart-drawer-trigger" style="cursor: pointer; position: relative;">
+                <i class="fa-solid fa-cart-shopping" style="font-size: 1.2rem; color: var(--color-text-dark);"></i>
+                <span id="global-cart-count"
+                    style="position: absolute; top: -8px; right: -10px; background: #a05b50; color: white; width: 18px; height: 18px; border-radius: 50%; font-size: 0.7rem; font-weight: bold; display: flex; align-items: center; justify-content: center;">0</span>
+            </div>
+            <a href="login.html" class="btn btn-primary">Login</a>
+        </div>
+    </nav>
+
+    <!-- Slide-Out Cart Overlay -->
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer" data-lenis-prevent>
+        <div class="cart-drawer-header">
+            <h3>Your Cart</h3>
+            <button class="cart-close-btn" id="cart-close-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-drawer-body">
+            <div class="no-content" id="no-content">
+                <p class="text" style="padding: 2rem;">Your cart is empty.</p>
+            </div>
+            <div class="cart-items" id="cart-items-container">
+                <!-- Cart items populate here -->
+            </div>
+        </div>
+        <div class="cart-drawer-footer checkout-pane" id="checkout-pane" style="display: none;">
+            <div
+                style="font-size: 1.1rem; font-weight: bold; margin-bottom: 12px; display: flex; justify-content: space-between;">
+                <span>Total:</span> <span id="cart-total" style="color: var(--color-primary);">$0</span>
+            </div>
+            <button class="buy-button" onclick="alert('Proceeding to checkout!')"
+                style="width: 100%; background-color: #3F322D; color: #FFFFFF; border: none; padding: 15px 40px; border-radius: 50px; font-weight: bold; cursor: pointer; font-size: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.2s;">Secure
+                Checkout</button>
+        </div>
+    </div>
+
+    <main style="padding-top: 100px;">
+        <!-- Store Header Area -->
+        <section class="store-header"
+            style="background-color: var(--color-bg); padding: 4rem 2rem; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.05);">
+            <div class="container" style="max-width: 800px; margin: 0 auto;">
+                <span
+                    style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--color-primary);">Complete
+                    Catalog</span>
+                <h1 style="font-family: var(--font-heading); font-size: 3.5rem; margin: 1rem 0;">Medical Equipment</h1>
+                <p style="font-size: 1.1rem; opacity: 0.8; line-height: 1.6;">Browse our comprehensive selection of
+                    advanced diagnostic, monitoring, and surgical equipment designed for modern healthcare facilities.
+                </p>
+
+                <!-- Filter Tabs -->
+                <div class="store-filters"
+                    style="margin-top: 3rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <button class="filter-btn active" data-filter="all">All Devices</button>
+                    <button class="filter-btn" data-filter="Imaging">Imaging</button>
+                    <button class="filter-btn" data-filter="Monitoring">Monitoring</button>
+                    <button class="filter-btn" data-filter="Surgical">Surgical</button>
+                    <button class="filter-btn" data-filter="Emergency">Emergency</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Grid Dashboard -->
+        <section class="store-grid-section" style="padding: 4rem 2rem; background-color: #fcfbf9;">
+            <div class="store-container" style="max-width: 1200px; margin: 0 auto;">
+
+                <!-- Dynamic Grid injected by JS -->
+                <div class="product-grid" id="store-grid">
+                    <!-- Javascript populates items here -->
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Alternative Modern Premium Footer -->
+    <footer class="alt-premium-footer">
+        <div class="apf-container">
+            <div class="apf-grid">
+                <!-- Branding and Contact Box -->
+                <div class="apf-brand-section">
+                    <img src="./Untitled design (3).webp" alt="Stackly Logo" class="apf-logo">
+                    <h2 class="apf-slogan animate-entry">Engineered for LIFE.</h2>
+
+                    <div class="apf-contact-box">
+                        <p class="apf-address">100 Innovation Way<br>Medical Research Park<br>Boston, MA 02115</p>
+                        <a href="tel:+18005551234" class="apf-phone">+1 (800) 555-1234</a>
+                        <a href="mailto:support@stackly.com" class="apf-email">support@stackly.com</a>
+                    </div>
+                </div>
+
+                <!-- Navigation Columns -->
+                <div class="apf-nav-section">
+                    <div class="apf-col">
+                        <h4 class="apf-title">Specialties</h4>
+                        <ul class="apf-list">
+                            <li><a href="#">Diagnostic Imaging</a></li>
+                            <li><a href="#">Patient Monitoring</a></li>
+                            <li><a href="#">Surgical Integration</a></li>
+                            <li><a href="#">Laboratory Systems</a></li>
+                            <li><a href="#">Critical Care</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="apf-col">
+                        <h4 class="apf-title">Company</h4>
+                        <ul class="apf-list">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Newsletter / CTA -->
+                <div class="apf-cta-section">
+                    <h4 class="apf-title animate-entry">Stay Informed</h4>
+                    <p class="apf-newsletter-text">Subscribe to our clinical insights brief for the latest advancements
+                        in medical technology.</p>
+                    <form class="apf-newsletter-form" onsubmit="event.preventDefault();window.location.href='404.html'">
+                        <input type="email" placeholder="Enter your email address" class="apf-input" required>
+                        <button type="submit" class="apf-submit-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                    </form>
+
+                    <div class="apf-social-icons">
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright Bar -->
+            <div class="apf-bottom-bar">
+                <div class="apf-copyright">
+                    &copy; 2026 Stackly Corporation.
+                </div>
+                <div class="apf-legal-links">
+                    <a href="#">Regulatory</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="store.js"></script>
+</body>
+
+</html>
