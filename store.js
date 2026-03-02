@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Patient Monitoring System",
             category: "Monitoring",
             price: 4500,
-            image: "./patient monitors.webp",
+            // use dedicated image from `images` folder
+            image: "images/patient-monitor.webp",
             description: "Continuous physiological tracking with integrated vitals display.",
             color: "#E8D8CF",
             inCart: false
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Advanced MRI Scanner",
             category: "Imaging",
             price: 1250000,
-            image: "./ct scan.webp",
+            image: "images/mri.webp",
             description: "High-resolution 3.0T magnetic resonance imaging system.",
             color: "#E8D8CF",
             inCart: false
@@ -38,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Portable Defibrillator",
             category: "Emergency",
             price: 2100,
-            image: "./ekg.webp",
+            image: "images/defibrillator.webp",
             description: "Automated external defibrillator (AED) for emergency response.",
             color: "#E8D8CF",
             inCart: false
@@ -48,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Surgical Microscope",
             category: "Surgical",
             price: 85000,
-            image: "./surgical lasers.webp",
+            image: "images/surgical-laser.webp",
             description: "High-magnification optical system for neuro and micro-surgery.",
             color: "#E8D8CF",
             inCart: false
@@ -58,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Anesthesia Workstation",
             category: "Surgical",
             price: 45000,
-            image: "./aneshthesia machine.webp",
+            image: "images/anesthesia-machine.webp",
             description: "Comprehensive ventilation and agent delivery system.",
             color: "#E8D8CF",
             inCart: false
@@ -68,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Fetal Monitor",
             category: "Monitoring",
             price: 3200,
-            image: "./images/incubator.webp",
+            image: "images/ultrasound.webp",
             description: "Advanced obstetric monitoring for maternal and fetal heartbeat.",
             color: "#E8D8CF",
             inCart: false
@@ -78,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Mobile Digital X-Ray",
             category: "Imaging",
             price: 65000,
-            image: "./x ray.webp",
+            image: "images/x-ray.webp",
             description: "Motorized portable radiography system for point-of-care imaging.",
             color: "#E8D8CF",
             inCart: false
@@ -88,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Emergency Transport Ventilator",
             category: "Emergency",
             price: 12000,
-            image: "./ventillators.webp",
+            image: "images/ventilator.webp",
             description: "Ruggedized, lightweight ventilator for pre-hospital and transport.",
             color: "#E8D8CF",
             inCart: false

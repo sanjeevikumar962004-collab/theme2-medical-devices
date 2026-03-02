@@ -568,7 +568,7 @@ a {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background-image: url('https://images.unsplash.com/photo-1594824432257-f6727228d488?q=80&w=100&auto=format&fit=crop');
+    background-image: url('images/photo-1559839734-2b71ea197ec2_cb2448.webp');
     background-size: cover;
     background-position: center;
 }
@@ -1265,7 +1265,7 @@ a {
 .stats-section {
     position: relative;
     padding: 8rem 8rem;
-    background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1600&q=80');
+    background-image: url('images/photo-1516549655169-df83a0774514_7b688c.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
