@@ -21,6 +21,33 @@ window.addEventListener('load', () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Cart Drawer Toggle
+    const cartTrigger = document.getElementById('cart-drawer-trigger');
+    const cartDrawer = document.getElementById('cart-drawer');
+    const cartOverlay = document.getElementById('cart-drawer-overlay');
+    const cartCloseBtn = document.getElementById('cart-close-btn');
+
+    if (cartTrigger) {
+        cartTrigger.addEventListener('click', () => {
+            cartDrawer.classList.add('active');
+            cartOverlay.classList.add('active');
+        });
+    }
+
+    if (cartCloseBtn) {
+        cartCloseBtn.addEventListener('click', () => {
+            cartDrawer.classList.remove('active');
+            cartOverlay.classList.remove('active');
+        });
+    }
+
+    if (cartOverlay) {
+        cartOverlay.addEventListener('click', () => {
+            cartDrawer.classList.remove('active');
+            cartOverlay.classList.remove('active');
+        });
+    }
+
     // Medical devices array. We need 12 pills.
     // To make them suddenly loop from left when they vanish on the right,
     // we distribute them within an active top-arc span (e.g. 105 degrees to -105 degrees).
@@ -171,22 +198,55 @@ document.addEventListener("DOMContentLoaded", () => {
     // Mobile Menu Toggle
     const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
     const navLinks = document.getElementById("nav-links");
-    const toggleIcon = mobileMenuToggle.querySelector("i");
 
     if (mobileMenuToggle && navLinks) {
-        mobileMenuToggle.addEventListener("click", () => {
+        const toggleIcon = mobileMenuToggle.querySelector("i");
+        mobileMenuToggle.addEventListener("click", (e) => {
+            e.stopPropagation(); // Prevent bubbling
             navLinks.classList.toggle("active");
 
             // Toggle icon between hamburger and close (X)
-            if (navLinks.classList.contains("active")) {
-                toggleIcon.classList.remove("fa-bars");
-                toggleIcon.classList.add("fa-xmark");
-            } else {
-                toggleIcon.classList.remove("fa-xmark");
-                toggleIcon.classList.add("fa-bars");
+            if (toggleIcon) {
+                if (navLinks.classList.contains("active")) {
+                    toggleIcon.classList.remove("fa-bars");
+                    toggleIcon.classList.add("fa-xmark");
+                } else {
+                    toggleIcon.classList.remove("fa-xmark");
+                    toggleIcon.classList.add("fa-bars");
+                }
             }
         });
     }
+
+    // Mobile Dropdown Click Toggle
+    const hasDropdowns = document.querySelectorAll('.nav-links .has-dropdown');
+    hasDropdowns.forEach(dropdown => {
+        const icon = dropdown.querySelector('i');
+        if (icon) {
+            icon.addEventListener('click', (e) => {
+                if (window.innerWidth <= 900) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropdown.classList.toggle('open');
+                }
+            });
+        }
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navLinks && navLinks.classList.contains('active')) {
+            if (!navLinks.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                navLinks.classList.remove('active');
+                const toggleIcon = mobileMenuToggle.querySelector("i");
+                if (toggleIcon) {
+                    toggleIcon.classList.remove("fa-xmark");
+                    toggleIcon.classList.add("fa-bars");
+                }
+            }
+        }
+    });
+
     // Mental Health Services Interactive Rows
     const serviceRows = document.querySelectorAll('.mh-service-row');
     serviceRows.forEach(row => {
@@ -590,9 +650,16 @@ function updateCartUI() {
 
     // Update Checkout Pane Total Price
     const cartTotalEl = document.getElementById('cart-total');
+    const globalCartCount = document.getElementById('global-cart-count');
+
     if (cartTotalEl) {
         const totalSum = state.cartItems.reduce((acc, item) => acc + (item.price * item.count), 0);
         cartTotalEl.innerText = `$${totalSum.toLocaleString()}`;
+    }
+
+    if (globalCartCount) {
+        const totalCount = state.cartItems.reduce((acc, item) => acc + item.count, 0);
+        globalCartCount.innerText = totalCount;
     }
 }
 
@@ -608,10 +675,18 @@ document.addEventListener("DOMContentLoaded", () => {
 // ---------------------------------------------------------------
 document.addEventListener('click', (e) => {
     const link = e.target.closest('a');
-    if (!link) return;
-    const href = link.getAttribute('href');
-    if (href === '#') {
-        e.preventDefault();
-        window.location.href = '404.html';
+    if (link) {
+        const href = link.getAttribute('href');
+        if (href === '#' || href === 'javascript:void(0)') {
+            e.preventDefault();
+            window.location.href = '404.html';
+        }
+    }
+
+    // Also catch buttons that act as placeholders
+    const btn = e.target.closest('button');
+    if (btn && !btn.closest('form') && !btn.id && btn.innerText.trim() !== '' && !btn.onclick && !btn.classList.contains('cart-close-btn') && !btn.classList.contains('minus') && !btn.classList.contains('plus')) {
+        // Only divert if it looks like a generic button without attached logic
+        // This is a bit aggressive, safer to just target links first or specific button classes
     }
 }, true);

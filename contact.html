@@ -491,8 +491,10 @@
             <li><a href="store.html">Products</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
             <li><a href="contact.html" class="active">Contact</a></li>
+            <li class="mobile-only"><a href="login.html" class="btn btn-primary"
+                    style="margin-top: 1rem; width: 100%; text-align: center;">Login</a></li>
         </ul>
         <div class="nav-action">
             <a href="login.html" class="btn btn-primary">Login</a>
@@ -779,12 +781,6 @@
                 }, 400);
             }
 
-            // Mobile menu
-            const menuToggle = document.getElementById('mobile-menu-toggle');
-            const navLinks = document.getElementById('nav-links');
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-            }
 
             // Contact form submit
             const form = document.getElementById('contact-form');
@@ -871,6 +867,7 @@
             }
         });
     </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

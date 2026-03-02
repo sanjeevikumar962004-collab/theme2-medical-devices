@@ -55,13 +55,46 @@
             <li><a href="about.html">About Us</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="blog.html">Blog</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li class="mobile-only"><a href="login.html" class="btn btn-primary"
+                    style="margin-top: 1rem; width: 100%; text-align: center;">Login</a></li>
         </ul>
 
         <div class="nav-action">
+            <div class="cart-trigger" id="cart-drawer-trigger">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="global-cart-count">0</span>
+            </div>
             <a href="login.html" class="btn btn-primary">Login</a>
         </div>
     </nav>
+
+    <!-- Slide-Out Cart Overlay -->
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer" data-lenis-prevent>
+        <div class="cart-drawer-header">
+            <h3>Your Cart</h3>
+            <button class="cart-close-btn" id="cart-close-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-drawer-body">
+            <div class="no-content" id="no-content">
+                <p class="text" style="padding: 2rem;">Your cart is empty.</p>
+            </div>
+            <div class="cart-items" id="cart-items-container">
+                <!-- Cart items populate here -->
+            </div>
+        </div>
+        <div class="cart-drawer-footer checkout-pane" id="checkout-pane" style="display: none;">
+            <div
+                style="font-size: 1.1rem; font-weight: bold; margin-bottom: 12px; display: flex; justify-content: space-between;">
+                <span>Total:</span> <span id="cart-total" style="color: #a05b50;">$0</span>
+            </div>
+            <button class="buy-button" onclick="window.location.href='404.html'"
+                style="width: 100%; background-color: #3F322D; color: #FFFFFF; border: none; padding: 15px 40px; border-radius: 50px; font-weight: bold; cursor: pointer; font-size: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.2s;">Secure
+                Checkout</button>
+        </div>
+    </div>
 
     <main>
         <!-- Split Hero Section -->

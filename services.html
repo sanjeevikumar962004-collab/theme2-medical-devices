@@ -618,8 +618,10 @@
             <li><a href="store.html">Products</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="services.html" class="active">Services</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li class="mobile-only"><a href="login.html" class="btn btn-primary"
+                    style="margin-top: 1rem; width: 100%; text-align: center;">Login</a></li>
         </ul>
         <div class="nav-action">
             <a href="login.html" class="btn btn-primary">Login</a>
@@ -788,8 +790,7 @@
         <section class="why-section">
             <div class="why-inner">
                 <div class="why-image">
-                    <img src="images/photo-1576091160399-112ba8d25d1d_c35d31.webp"
-                        alt="Stackly Service Engineer">
+                    <img src="images/photo-1576091160399-112ba8d25d1d_c35d31.webp" alt="Stackly Service Engineer">
                 </div>
                 <div class="why-content">
                     <div class="section-eyebrow">Why Stackly Services</div>
@@ -988,12 +989,6 @@
                 }, 400);
             }
 
-            // Mobile menu
-            const menuToggle = document.getElementById('mobile-menu-toggle');
-            const navLinks = document.getElementById('nav-links');
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-            }
 
             // GSAP Animations
             if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
@@ -1044,6 +1039,7 @@
             }
         });
     </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

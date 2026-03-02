@@ -442,8 +442,10 @@
             <li><a href="store.html">Products</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li class="mobile-only"><a href="login.html" class="btn btn-primary"
+                    style="margin-top: 1rem; width: 100%; text-align: center;">Login</a></li>
         </ul>
         <div class="nav-action">
             <a href="login.html" class="btn btn-primary">Login</a>
@@ -474,15 +476,13 @@
                 <div class="section-label">Featured Article</div>
                 <div class="featured-card" data-category="AI in Medicine">
                     <div class="featured-image">
-                        <img src="images/photo-1559757148-5c350d0d3c56_39ec3e.webp"
-                            alt="AI in Radiology">
+                        <img src="images/photo-1559757148-5c350d0d3c56_39ec3e.webp" alt="AI in Radiology">
                     </div>
                     <div class="featured-content">
                         <span class="post-cat-tag">AI in Medicine</span>
                         <h2>How AI is Transforming Radiology — and What It Means for Your Hospital</h2>
                         <div class="post-meta">
-                            <img class="author-img"
-                                src="images/photo-1559839734-2b71ea197ec2_cb2448.webp"
+                            <img class="author-img" src="images/photo-1559839734-2b71ea197ec2_cb2448.webp"
                                 alt="Dr. Sarah Chen">
                             <span>Dr. Sarah Chen</span>
                             <span class="dot">•</span>
@@ -508,8 +508,7 @@
 
                     <div class="blog-card" data-category="Monitoring">
                         <div class="blog-card-image">
-                            <img src="images/photo-1516549655169-df83a0774514_7c6cc0.webp"
-                                alt="Patient Monitoring">
+                            <img src="images/photo-1516549655169-df83a0774514_7c6cc0.webp" alt="Patient Monitoring">
                         </div>
                         <div class="blog-card-body">
                             <span class="post-cat-tag">Monitoring</span>
@@ -525,8 +524,7 @@
 
                     <div class="blog-card" data-category="Imaging">
                         <div class="blog-card-image">
-                            <img src="images/photo-1530497610245-94d3c16cda28_d6b6a4.webp"
-                                alt="MRI Technology">
+                            <img src="images/photo-1530497610245-94d3c16cda28_d6b6a4.webp" alt="MRI Technology">
                         </div>
                         <div class="blog-card-body">
                             <span class="post-cat-tag">Imaging</span>
@@ -542,8 +540,7 @@
 
                     <div class="blog-card" data-category="Surgical">
                         <div class="blog-card-image">
-                            <img src="images/photo-1576091160399-112ba8d25d1d_2c00d2.webp"
-                                alt="Operating Room">
+                            <img src="images/photo-1576091160399-112ba8d25d1d_2c00d2.webp" alt="Operating Room">
                         </div>
                         <div class="blog-card-body">
                             <span class="post-cat-tag">Surgical</span>
@@ -559,8 +556,7 @@
 
                     <div class="blog-card" data-category="Compliance">
                         <div class="blog-card-image">
-                            <img src="images/photo-1583324113626-70df0f4deaab_f6ac44.webp"
-                                alt="Medical Compliance">
+                            <img src="images/photo-1583324113626-70df0f4deaab_f6ac44.webp" alt="Medical Compliance">
                         </div>
                         <div class="blog-card-body">
                             <span class="post-cat-tag">Compliance</span>
@@ -576,8 +572,7 @@
 
                     <div class="blog-card" data-category="Imaging">
                         <div class="blog-card-image">
-                            <img src="images/photo-1519494026892-80bbd2d6fd0d_4a0f78.webp"
-                                alt="Ultrasound">
+                            <img src="images/photo-1519494026892-80bbd2d6fd0d_4a0f78.webp" alt="Ultrasound">
                         </div>
                         <div class="blog-card-body">
                             <span class="post-cat-tag">Imaging</span>
@@ -593,8 +588,7 @@
 
                     <div class="blog-card" data-category="AI in Medicine">
                         <div class="blog-card-image">
-                            <img src="images/photo-1559757148-5c350d0d3c56_ba03cf.webp"
-                                alt="AI Diagnostics">
+                            <img src="images/photo-1559757148-5c350d0d3c56_ba03cf.webp" alt="AI Diagnostics">
                         </div>
                         <div class="blog-card-body">
                             <span class="post-cat-tag">AI in Medicine</span>
@@ -705,12 +699,6 @@
                 }, 400);
             }
 
-            // Mobile menu
-            const menuToggle = document.getElementById('mobile-menu-toggle');
-            const navLinks = document.getElementById('nav-links');
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-            }
 
             // Category filter — real show/hide logic
             const pills = document.querySelectorAll('.cat-pill');
@@ -782,6 +770,7 @@
             }
         });
     </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-
     // 1. Expanded Store Data Catalog
     const storeProducts = [
         {
@@ -217,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateCartUI() {
         cartItemsContainer.innerHTML = '';
 
-        const cartCount = cartState.items.length;
+        const cartCount = cartState.items.reduce((acc, item) => acc + item.count, 0);
         globalCartCount.textContent = cartCount;
 
         if (cartCount === 0) {
@@ -300,3 +299,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize Store
     renderGrid('all');
 });
+
+// Global interceptor for placeholder links
+document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (link) {
+        const href = link.getAttribute('href');
+        if (href === '#' || href === 'javascript:void(0)') {
+            e.preventDefault();
+            window.location.href = '404.html';
+        }
+    }
+}, true);

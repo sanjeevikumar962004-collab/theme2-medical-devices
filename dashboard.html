@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly Dashboard | Medical Device Management</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="box">
+            <div id="l1">S</div>
+            <div id="l2">T</div>
+            <div id="l3">A</div>
+            <div id="l4">C</div>
+            <div id="l5">K</div>
+            <div id="l6">L</div>
+            <div id="l7">Y</div>
+        </div>
+    </div>
+
+    <!-- Global Navigation -->
+    <nav class="navbar">
+        <div class="menu-toggle" id="mobile-menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div class="logo">
+            <img src="./Untitled design (3).webp" alt="Stackly Logo" class="brand-img">
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+            <div class="mobile-menu-logo">
+                <img src="./Untitled design (3).webp" alt="Stackly Logo" class="brand-img">
+            </div>
+            <li class="has-dropdown">
+                <a href="index.html">Home <i class="fa-solid fa-chevron-down"
+                        style="font-size: 0.75rem; margin-left: 4px; opacity: 0.7;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html">Home 1</a></li>
+                    <li><a href="index2.html">Home 2</a></li>
+                </ul>
+            </li>
+            <li><a href="./store.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-action">
+            <a href="login.html" class="btn btn-primary">Login</a>
+        </div>
+    </nav>
+
+    <!-- Dashboard Page Container -->
+    <div class="dashboard-page-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3 style="font-size: 1.1rem; font-weight: 700; color: #a05b50;">DASHBOARD</h3>
+                <button class="sidebar-close" id="sidebarClose"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> Overview</a></li>
+                    <li><a href="#"><i class="fa-solid fa-microchip"></i> My Devices</a></li>
+                    <li><a href="#"><i class="fa-solid fa-wrench"></i> Maintenance</a></li>
+                    <li><a href="#"><i class="fa-solid fa-file-waveform"></i> Reports</a></li>
+                    <li><a href="#"><i class="fa-solid fa-bell"></i> Alerts</a></li>
+                    <li class="nav-divider"></li>
+                    <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                    <li><a href="index.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="images/photo-1559839734-2b71ea197ec2_cb2448.webp" alt="User Avatar" class="user-avatar">
+                    <div class="user-info">
+                        <span class="user-name">Dr. Linda Chen</span>
+                        <span class="user-role">Administrator</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Top Bar -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle"><i class="fa-solid fa-bars"></i></button>
+                    <h1 class="page-title">Dashboard Overview</h1>
+                </div>
+                <div class="header-right">
+                    <!-- UI elements removed for cleaner management focus -->
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(160, 91, 80, 0.1); color: #a05b50;">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-label">Active Devices</span>
+                            <h3 class="stat-value">1,284</h3>
+                            <span class="stat-trend trend-up"><i class="fa-solid fa-arrow-up"></i> 12%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(63, 50, 45, 0.1); color: #3F322D;">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-label">Maintenance Due</span>
+                            <h3 class="stat-value">14</h3>
+                            <span class="stat-trend text-muted">Next 7 days</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(232, 216, 207, 0.2); color: #8e7970;">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-label">System Integrity</span>
+                            <h3 class="stat-value">99.9%</h3>
+                            <span class="stat-trend trend-up"><i class="fa-solid fa-check"></i> Optimized</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(0, 0, 0, 0.05); color: #333;">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-label">Power Efficiency</span>
+                            <h3 class="stat-value">86%</h3>
+                            <span class="stat-trend trend-down"><i class="fa-solid fa-arrow-down"></i> 3%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Middle Section: Charts & Updates -->
+                <div class="dashboard-grid">
+                    <div class="grid-card chart-section">
+                        <div class="card-header">
+                            <h3>Device Performance</h3>
+                            <div class="card-actions">
+                                <select class="chart-filter">
+                                    <option>Last 7 Days</option>
+                                    <option>Last 30 Days</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-container" id="performanceChart">
+                            <!-- GSAP Animated SVG Chart will be injected here -->
+                            <div class="chart-placeholder">
+                                <svg viewBox="0 0 800 300" class="main-chart">
+                                    <defs>
+                                        <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="rgba(160, 91, 80, 0.2)" />
+                                            <stop offset="100%" stop-color="rgba(160, 91, 80, 0)" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path class="chart-line" d="M0,250 Q100,200 200,220 T400,100 T600,150 T800,50"
+                                        fill="none" stroke="#a05b50" stroke-width="3" />
+                                    <path class="chart-area"
+                                        d="M0,250 Q100,200 200,220 T400,100 T600,150 T800,50 L800,300 L0,300 Z"
+                                        fill="url(#chartGradient)" />
+                                    <!-- Points -->
+                                    <circle cx="200" cy="220" r="4" fill="#a05b50" />
+                                    <circle cx="400" cy="100" r="4" fill="#a05b50" />
+                                    <circle cx="600" cy="150" r="4" fill="#a05b50" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid-card recent-alerts">
+                        <div class="card-header">
+                            <h3>Critical Alerts</h3>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="alert-list">
+                            <div class="alert-item high">
+                                <div class="alert-time">02:14 PM</div>
+                                <p><strong>MRI System Unit 4:</strong> Liquid helium levels below 10% threshold.</p>
+                            </div>
+                            <div class="alert-item medium">
+                                <div class="alert-time">11:05 AM</div>
+                                <p><strong>CT Scanner 1:</strong> Scheduled calibration required by end of day.</p>
+                            </div>
+                            <div class="alert-item low">
+                                <div class="alert-time">Yesterday</div>
+                                <p><strong>Ventilator V-82:</strong> Filter replacement successfully verified.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Section: Device Table -->
+                <div class="grid-card table-section">
+                    <div class="card-header">
+                        <h3>Connected Devices</h3>
+                        <div class="table-actions">
+                            <button class="btn btn-outline btn-sm"><i class="fa-solid fa-download"></i> Export</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> Add Device</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="device-table" id="deviceTable">
+                            <thead>
+                                <tr>
+                                    <th>Device Name</th>
+                                    <th>ID / Serial</th>
+                                    <th>Status</th>
+                                    <th>last Sync</th>
+                                    <th>Department</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="deviceTableBody">
+                                <!-- Populated by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Sidebar Overlay for Mobile -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    </div>
+
+    <!-- Alternative Modern Premium Footer -->
+    <footer class="alt-premium-footer">
+        <div class="apf-container">
+            <div class="apf-grid">
+                <!-- Branding and Contact Box -->
+                <div class="apf-brand-section">
+                    <img src="./Untitled design (3).webp" alt="Stackly Logo" class="apf-logo">
+                    <h2 class="apf-slogan animate-entry">Engineered for LIFE.</h2>
+
+                    <div class="apf-contact-box">
+                        <p class="apf-address">100 Innovation Way<br>Medical Research Park<br>Boston, MA 02115</p>
+                        <a href="tel:+18005551234" class="apf-phone">+1 (800) 555-1234</a>
+                        <a href="mailto:support@stackly.com" class="apf-email">support@stackly.com</a>
+                    </div>
+                </div>
+
+                <!-- Navigation Columns -->
+                <div class="apf-nav-section">
+                    <div class="apf-col">
+                        <h4 class="apf-title">Specialties</h4>
+                        <ul class="apf-list">
+                            <li><a href="#">Diagnostic Imaging</a></li>
+                            <li><a href="#">Patient Monitoring</a></li>
+                            <li><a href="#">Surgical Integration</a></li>
+                            <li><a href="#">Laboratory Systems</a></li>
+                            <li><a href="#">Critical Care</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="apf-col">
+                        <h4 class="apf-title">Company</h4>
+                        <ul class="apf-list">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Newsletter / CTA -->
+                <div class="apf-cta-section">
+                    <h4 class="apf-title animate-entry">Stay Informed</h4>
+                    <p class="apf-newsletter-text">Subscribe to our clinical insights brief for the latest advancements
+                        in medical technology.</p>
+                    <form class="apf-newsletter-form" onsubmit="event.preventDefault();window.location.href='404.html'">
+                        <input type="email" placeholder="Enter your email address" class="apf-input" required>
+                        <button type="submit" class="apf-submit-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                    </form>
+
+                    <div class="apf-social-icons">
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright Bar -->
+            <div class="apf-bottom-bar">
+                <div class="apf-copyright">
+                    &copy; 2026 Stackly Corporation.
+                </div>
+                <div class="apf-legal-links">
+                    <a href="#">Regulatory</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

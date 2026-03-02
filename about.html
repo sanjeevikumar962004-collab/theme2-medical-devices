@@ -659,8 +659,10 @@
             <li><a href="store.html">Products</a></li>
             <li><a href="about.html" class="active">About Us</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li class="mobile-only"><a href="login.html" class="btn btn-primary"
+                    style="margin-top: 1rem; width: 100%; text-align: center;">Login</a></li>
         </ul>
         <div class="nav-action">
             <a href="login.html" class="btn btn-primary">Login</a>
@@ -679,8 +681,7 @@
                         globe.</p>
                 </div>
                 <div class="about-hero-image">
-                    <img src="images/photo-1576091160399-112ba8d25d1d_c35d31.webp"
-                        alt="Stackly Team at Work">
+                    <img src="images/photo-1576091160399-112ba8d25d1d_c35d31.webp" alt="Stackly Team at Work">
                     <div class="about-hero-badge">
                         <div class="badge-icon"><i class="fa-solid fa-medal"></i></div>
                         <div>
@@ -718,8 +719,7 @@
         <section class="mission-section">
             <div class="mission-inner">
                 <div class="mission-image">
-                    <img src="images/photo-1530497610245-94d3c16cda28_e94890.webp"
-                        alt="Medical Research">
+                    <img src="images/photo-1530497610245-94d3c16cda28_e94890.webp" alt="Medical Research">
                 </div>
                 <div class="mission-content">
                     <div class="section-eyebrow">Our Mission</div>
@@ -808,8 +808,7 @@
             <div class="team-grid">
                 <div class="team-card">
                     <div class="team-photo">
-                        <img src="images/photo-1559839734-2b71ea197ec2_5d4440.webp"
-                            alt="Dr. Sarah Chen">
+                        <img src="images/photo-1559839734-2b71ea197ec2_5d4440.webp" alt="Dr. Sarah Chen">
                     </div>
                     <div class="team-info">
                         <h4>Dr. Sarah Chen</h4>
@@ -822,8 +821,7 @@
                 </div>
                 <div class="team-card">
                     <div class="team-photo">
-                        <img src="images/photo-1612349317150-e413f6a5b16d_6cf12a.webp"
-                            alt="Dr. Marcus Webb">
+                        <img src="images/photo-1612349317150-e413f6a5b16d_6cf12a.webp" alt="Dr. Marcus Webb">
                     </div>
                     <div class="team-info">
                         <h4>Dr. Marcus Webb</h4>
@@ -836,8 +834,7 @@
                 </div>
                 <div class="team-card">
                     <div class="team-photo">
-                        <img src="images/photo-1573497019940-1c28c88b4f3e_624c81.webp"
-                            alt="Priya Nair">
+                        <img src="images/photo-1573497019940-1c28c88b4f3e_624c81.webp" alt="Priya Nair">
                     </div>
                     <div class="team-info">
                         <h4>Priya Nair</h4>
@@ -850,8 +847,7 @@
                 </div>
                 <div class="team-card">
                     <div class="team-photo">
-                        <img src="images/photo-1582750433449-648ed127bb54_d59baf.webp"
-                            alt="James Okafor">
+                        <img src="images/photo-1582750433449-648ed127bb54_d59baf.webp" alt="James Okafor">
                     </div>
                     <div class="team-info">
                         <h4>James Okafor</h4>
@@ -1001,14 +997,6 @@
                 }, 400);
             }
 
-            // Mobile menu toggle
-            const menuToggle = document.getElementById('mobile-menu-toggle');
-            const navLinks = document.getElementById('nav-links');
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                });
-            }
 
             // GSAP scroll animations
             if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
@@ -1104,6 +1092,7 @@
             }
         });
     </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
