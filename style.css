@@ -2349,8 +2349,23 @@ a {
     filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.15));
 }
 
+/* --- Intermediate Desktop/Tablet Spacing (1151px - 1350px) --- */
+@media (max-width: 1350px) and (min-width: 1151px) {
+    .navbar {
+        padding: 1.5rem 2rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .nav-action {
+        gap: 1rem;
+    }
+}
+
 /* --- Mobile Menu & Responsive Navbar --- */
-@media (max-width: 900px) {
+@media (max-width: 1150px) {
     .navbar {
         padding: 1.5rem 2rem;
         display: flex;
