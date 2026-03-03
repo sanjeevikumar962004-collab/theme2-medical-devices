@@ -338,8 +338,18 @@
 
     <script>
         // Every action button → 404.html (no backend)
+        const emailInput = document.getElementById('fp-email');
+        const emailError = document.getElementById('err-fp-email');
+
         document.getElementById('send-code-btn').addEventListener('click', () => {
-            window.location.href = '404.html';
+            if (!emailInput.value.trim() || !emailInput.value.includes('@')) {
+                emailError.classList.add('show');
+                emailInput.classList.add('error');
+            } else {
+                emailError.classList.remove('show');
+                emailInput.classList.remove('error');
+                window.location.href = '404.html';
+            }
         });
 
         document.getElementById('verify-otp-btn').addEventListener('click', () => {
