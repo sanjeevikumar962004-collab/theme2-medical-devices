@@ -8,15 +8,17 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 preloader.style.display = 'none';
             }, 300);
-        }, 400);
+        }, 3000); // 3 seconds minimum per user request
     }
 });
 
-// Safety fallback: if for any reason the above doesn't fire, force-hide after 2s
+// Safety fallback: if for any reason the above doesn't fire, force-hide after 3.5s
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     if (preloader && preloader.style.display !== 'none') {
-        preloader.style.display = 'none';
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 3500);
     }
 });
 

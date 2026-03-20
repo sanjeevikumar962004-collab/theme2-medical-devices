@@ -2,10 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const preloader = document.getElementById('preloader');
     if (preloader) {
-        setTimeout(() => {
-            preloader.classList.add('fade-out');
-            setTimeout(() => { preloader.style.display = 'none'; }, 300);
-        }, 400);
+        setTimeout(() => { preloader.classList.add('fade-out'); setTimeout(() => { preloader.style.display = 'none'; }, 300); }, 3000);
     }
 });
 
@@ -80,3 +77,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
